@@ -1,0 +1,10 @@
+export const navData = {
+    heading: 'DevForge',
+    navLinks: [
+        { id: 1, name: "Home", href: "/" },
+        { id: 2, name: "Courses", href: "/courses" },
+        { id: 3, name: "About", href: "/about" },
+        { id: 4, name: "OpenForage", href: "/openForage" },
+        { id: 5, name: "Login", href: "/login" }
+    ]
+}
