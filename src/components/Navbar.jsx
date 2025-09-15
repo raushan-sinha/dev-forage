@@ -2,11 +2,6 @@ import React from 'react'
 import { useState } from "react";
 import MenuIcon from '@mui/icons-material/Menu';
 import ClearIcon from '@mui/icons-material/Clear';
-import HomeIcon from '@mui/icons-material/Home';
-import DeviceHubIcon from '@mui/icons-material/DeviceHub';
-import InfoIcon from '@mui/icons-material/Info';
-import OpenInNewIcon from '@mui/icons-material/OpenInNew';
-import LoginIcon from '@mui/icons-material/Login';
 import { navData } from '../project-data/navbarData';
 
 export default function Navbar() {
@@ -47,7 +42,7 @@ export default function Navbar() {
 
                 {/* Mobile MenuIcon */}
                 {isOpen && (
-                    <div className="md:hidden bg-gray-200 backdrop-blur-lg shadow-lg">
+                    <div className="md:hidden bg-[#c6def6] backdrop-blur-lg shadow-lg">
                         <ul className="flex flex-col items-center space-y-6 py-6 text-black font-medium">
                             {navData.navLinks.map((link) => (
                                 <li key={link.id}>
