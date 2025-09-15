@@ -2,6 +2,11 @@ import React from 'react'
 import { useState } from "react";
 import MenuIcon from '@mui/icons-material/Menu';
 import ClearIcon from '@mui/icons-material/Clear';
+import HomeIcon from '@mui/icons-material/Home';
+import DeviceHubIcon from '@mui/icons-material/DeviceHub';
+import InfoIcon from '@mui/icons-material/Info';
+import OpenInNewIcon from '@mui/icons-material/OpenInNew';
+import LoginIcon from '@mui/icons-material/Login';
 import { navData } from '../project-data/navbarData';
 
 export default function Navbar() {
