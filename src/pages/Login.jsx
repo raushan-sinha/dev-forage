@@ -8,12 +8,12 @@ export default function Login() {
             <Navbar />
 
             <div className="flex items-center justify-center bg-[#101923] px-4 sm:px-6 lg:px-8 min-h-screen">
-                <div className="bg-white shadow-lg rounded-2xl p-6 sm:p-8 md:p-10 w-full max-w-md mt-24 md:mt-28">
+                <div className="bg-[#f9dc5c] shadow-lg rounded-2xl p-6 sm:p-8 md:p-10 w-full max-w-md mt-24 md:mt-28">
                     {/* Heading */}
-                    <h2 className="text-2xl md:text-3xl font-bold text-center text-gray-800 mb-4">
+                    <h2 className="text-2xl md:text-3xl font-mono text-center text-gray-800 mb-4">
                         {loginData.heading}
                     </h2>
-                    <p className="text-center text-sm md:text-base text-gray-500 mb-8">
+                    <p className="text-center text-sm md:text-base text-gray-500 mb-8 font-mono">
                         {loginData.subText}
                     </p>
 
@@ -23,22 +23,30 @@ export default function Login() {
                             <div key={field.id}>
                                 <label
                                     htmlFor={field.id}
-                                    className="block text-sm font-medium text-gray-600 mb-1"
+                                    className="block text-sm font-mono text-black-50 mb-1"
                                 >
                                     {field.label}
                                 </label>
                                 <input
                                     type={field.type}
                                     id={field.id}
+                                    name={field.id}
                                     placeholder={field.placeholder}
-                                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none"
+                                    autoComplete={
+                                        field.id === "email"
+                                            ? "email"
+                                            : field.id === "password"
+                                                ? "current-password"
+                                                : "on"
+                                    }
+                                    className="w-full px-4 py-3 text-black-50 border border-black-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none font-mono"
                                     required
                                 />
                                 {field.id === "password" && (
                                     <div className="flex justify-end mt-2">
                                         <a
                                             href="/forgot-password"
-                                            className="text-sm text-blue-500 hover:underline"
+                                            className="text-sm text-black-50 hover:underline font-mono"
                                         >
                                             Forgot password?
                                         </a>
@@ -52,9 +60,11 @@ export default function Login() {
                             <input
                                 type="checkbox"
                                 id="remember"
+                                name="remember"
+                                autoComplete="on" 
                                 className="h-4 w-4 text-blue-500 rounded border-gray-300"
                             />
-                            <label htmlFor="remember" className="ml-2 text-sm text-gray-600">
+                            <label htmlFor="remember" className="ml-2 text-sm text-black-50 font-mono">
                                 Remember me
                             </label>
                         </div>
@@ -62,7 +72,7 @@ export default function Login() {
                         {/* Submit Button */}
                         <button
                             type="submit"
-                            className="w-full bg-blue-600 text-white py-3 rounded-lg font-medium hover:bg-blue-700 transition-colors"
+                            className="w-full bg-blue-600 text-white py-3 rounded-lg font-medium font-mono hover:bg-blue-700 transition-colors"
                         >
                             Login
                         </button>
@@ -70,9 +80,9 @@ export default function Login() {
 
                     {/* Social Login */}
                     <div className="my-8 flex items-center justify-center">
-                        <span className="w-1/5 border-b border-gray-300"></span>
-                        <span className="text-xs text-gray-400 mx-3">OR</span>
-                        <span className="w-1/5 border-b border-gray-300"></span>
+                        <span className="w-1/5 border-b border-black-300"></span>
+                        <span className="text-xs text-black-50 mx-3 font-mono">OR</span>
+                        <span className="w-1/5 border-b border-black-300"></span>
                     </div>
                     <div className="flex space-x-5 justify-center">
                         {loginData.socials.map((social) => (
@@ -86,13 +96,13 @@ export default function Login() {
                     </div>
 
                     {/* Register Link */}
-                    <p className="mt-8 text-center text-sm text-gray-600">
+                    <p className="mt-8 text-center text-sm text-black-50 font-mono">
                         Don’t have an account?{" "}
                         <a
                             href="/register"
-                            className="text-blue-500 font-medium hover:underline"
+                            className="underline font-medium hover:underline"
                         >
-                            Register
+                            Signup
                         </a>
                     </p>
                 </div>
