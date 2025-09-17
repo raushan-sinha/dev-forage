@@ -1,6 +1,7 @@
 import React from "react";
 import Navbar from "../components/Navbar";
 import { loginData } from "../project-data/loginData";
+import { Link } from "react-router-dom";
 
 export default function Login() {
     return (
@@ -98,12 +99,12 @@ export default function Login() {
                     {/* Register Link */}
                     <p className="mt-8 text-center text-sm text-black-50 font-mono">
                         Don’t have an account?{" "}
-                        <a
-                            href="/register"
+                        <Link
+                            to="/signup"
                             className="underline font-medium hover:underline"
                         >
                             Signup
-                        </a>
+                        </Link>
                     </p>
                 </div>
             </div>

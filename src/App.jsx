@@ -6,6 +6,7 @@ import About from './pages/About';
 import OpenForage from './pages/OpenForage';
 import Login from './pages/Login';
 import Navbar from './components/Navbar';
+import Signup from './authentication/Signup';
 
 export default function App() {
     return (
@@ -19,6 +20,7 @@ export default function App() {
                     <Route path='/about' element={<About />} />
                     <Route path='/openForage' element={<OpenForage />} />
                     <Route path='/login' element={<Login />} />
+                    <Route path='/signup' element={<Signup />} />
                 </Routes>
             </BrowserRouter>
         </>
