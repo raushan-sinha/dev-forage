@@ -3,7 +3,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Login from './pages/Login';
 import Navbar from './components/Navbar';
 import Signup from './authentication/Signup';
-import About from './pages/About/About';
+import Home from './pages/Home/Home';
 
 export default function App() {
     return (
@@ -12,7 +12,7 @@ export default function App() {
                 <Navbar />
 
                 <Routes>
-                    <Route path='/about' element={<About />} />
+                    <Route path='/' element={<Home />} />
                     <Route path='/login' element={<Login />} />
                     <Route path='/signup' element={<Signup />} />
                 </Routes>

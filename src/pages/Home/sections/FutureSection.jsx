@@ -1,5 +1,5 @@
 import React from 'react';
-import { futureData } from '../data/futureSectionData';
+import { futureData } from '../data/futureData';
 
 export default function FutureSection() {
     return (

@@ -1,5 +1,5 @@
 import React from 'react';
-import { dsaData } from '../data/dsaSectionData';
+import { dsaData } from '../data/dsaData';
 
 export default function DsaSection() {
     return (

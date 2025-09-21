@@ -1,5 +1,5 @@
 import React from 'react';
-import { roadmapData } from '../data/roadmapSectionData';
+import { roadmapData } from '../data/roadmapData';
 
 export default function RoadmapSection() {
     return (
