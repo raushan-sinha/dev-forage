@@ -1,7 +1,7 @@
 import React from "react";
-import Navbar from "../components/Navbar";
 import { loginData } from "../project-data/loginData";
 import { Link } from "react-router-dom";
+import Navbar from "../components/Navbar/Navbar";
 
 export default function Login() {
     return (

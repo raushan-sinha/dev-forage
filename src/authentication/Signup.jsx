@@ -1,7 +1,7 @@
 import React from "react";
 import { signupData } from "../project-data/signupData";
 import { Link } from "react-router-dom";
-import Navbar from "../components/Navbar";
+import Navbar from "../components/Navbar/Navbar";
 
 export default function Signup() {
     return (
