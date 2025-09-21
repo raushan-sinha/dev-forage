@@ -1,0 +1,71 @@
+import React from "react";
+import { footerData } from "./footerData";
+import GitHubIcon from "@mui/icons-material/GitHub";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import XIcon from "@mui/icons-material/X";
+import InstagramIcon from "@mui/icons-material/Instagram";
+
+const icons = {
+    github: <GitHubIcon />,
+    linkedin: <LinkedInIcon />,
+    twitter: <XIcon />,
+    instagram: <InstagramIcon />,
+};
+
+export default function Footer() {
+    return (
+        <footer className="bg-gray-900 text-gray-300 py-10 px-6 md:px-20">
+            <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-10">
+                <div>
+                    <h2 className="text-2xl font-bold text-white mb-4">
+                        {footerData.brand.name}
+                    </h2>
+                    <p className="text-sm leading-relaxed">
+                        {footerData.brand.description}
+                    </p>
+                </div>
+
+                {["quickLinks", "resources"].map((section, i) => (
+                    <div key={i}>
+                        <h3 className="text-lg font-semibold text-white mb-4">
+                            {section === "quickLinks" ? "Quick Links" : "Resources"}
+                        </h3>
+                        <ul className="space-y-2">
+                            {footerData[section].map((link, idx) => (
+                                <li key={idx}>
+                                    <a
+                                        href={link.href}
+                                        className="hover:text-blue-400 transition-colors"
+                                    >
+                                        {link.name}
+                                    </a>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+                ))}
+
+                <div>
+                    <h3 className="text-lg font-semibold text-white mb-4">Follow Us</h3>
+                    <div className="flex space-x-4 text-2xl">
+                        {footerData.socialLinks.map((social, idx) => (
+                            <a
+                                key={idx}
+                                href={social.href}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="hover:text-blue-400"
+                            >
+                                {icons[social.icon]}
+                            </a>
+                        ))}
+                    </div>
+                </div>
+            </div>
+
+            <div className="text-center border-t border-gray-700 mt-10 pt-6 text-sm">
+                {footerData.copyright}
+            </div>
+        </footer>
+    );
+}
