@@ -1,5 +1,5 @@
 import React from 'react';
-import { whyData } from './data/whySectionData';
+import { whyData } from '../data/whySectionData';
 
 export default function WhySection() {
     return (

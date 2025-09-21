@@ -1,14 +1,14 @@
 import React from 'react';
-import HeroSection from './HeroSection';
 import Navbar from '../../components/Navbar';
-import OfferSection from './OfferSection';
-import RoadmapSection from './RoadmapSection';
-import DsaSection from './DsaSection';
-import WhySection from './WhySection';
-import FutureSection from './FutureSection';
-import CallTOAction from './CallToAction';
+import HeroSection from './sections/HeroSection';
+import OfferSection from './sections/OfferSection';
+import RoadmapSection from './sections/RoadmapSection';
+import DsaSection from './sections/DsaSection';
+import WhySection from './sections/WhySection';
+import FutureSection from './sections/FutureSection';
+import CallToAction from './sections/CallToAction';
 
-export default function AboutPage() {
+export default function About() {
     return (
         <>
             <Navbar />
@@ -20,7 +20,7 @@ export default function AboutPage() {
                 <DsaSection />
                 <WhySection />
                 <FutureSection />
-                <CallTOAction />
+                <CallToAction />
             </div>
         </>
     );

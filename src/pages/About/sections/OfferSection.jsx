@@ -1,5 +1,5 @@
 import React from 'react';
-import { offerData } from './data/offerSectionData';
+import { offerData } from '../data/offerSectionData';
 
 export default function OfferSection() {
     return (
