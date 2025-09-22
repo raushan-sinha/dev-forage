@@ -1,13 +1,10 @@
 import React from "react";
 import { loginData } from "../project-data/loginData";
 import { Link } from "react-router-dom";
-import Navbar from "../components/Navbar/Navbar";
 
 export default function Login() {
     return (
         <>
-            <Navbar />
-
             <div className="flex items-center justify-center bg-gray-900 px-4 sm:px-6 lg:px-8 min-h-screen">
                 <div className="bg-gray-800 shadow-lg rounded-2xl p-6 sm:p-8 md:p-10 w-full max-w-md mt-24 md:mt-28 text-white">
                     {/* Heading */}
