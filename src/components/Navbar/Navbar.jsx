@@ -4,7 +4,6 @@ import MenuIcon from '@mui/icons-material/Menu';
 import ClearIcon from '@mui/icons-material/Clear';
 import { Link, useNavigate } from 'react-router-dom';
 import { navData } from './navbarData';
-import LoginBtn from '../../buttons/LoginBtn';
 
 export default function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
@@ -35,7 +34,11 @@ export default function Navbar() {
                                 </Link>
                             </li>
                         ))}
-                        <LoginBtn />
+                        <Link to="/login">
+                            <button className="px-5 py-2 rounded-lg bg-blue-600 text-white font-medium hover:bg-blue-700 transition duration-300">
+                                Login
+                            </button>
+                        </Link>
                     </ul>
 
                     {/* Mobile Hamburger */}
@@ -64,7 +67,11 @@ export default function Navbar() {
                                     </a>
                                 </li>
                             ))}
-                            <LoginBtn />
+                            <Link to="/login">
+                                <button className="px-5 py-2 rounded-lg bg-blue-600 text-white font-medium hover:bg-blue-700 transition duration-300">
+                                    Login
+                                </button>
+                            </Link>
                         </ul>
                     </div>
                 )}
