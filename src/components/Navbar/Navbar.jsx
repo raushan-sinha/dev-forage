@@ -4,6 +4,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import ClearIcon from '@mui/icons-material/Clear';
 import { Link, useNavigate } from 'react-router-dom';
 import { navData } from './navbarData';
+import LoginBtn from '../../buttons/LoginBtn';
 
 export default function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
@@ -24,7 +25,7 @@ export default function Navbar() {
                     </div>
 
                     {/* Desktop Links */}
-                    <ul className="hidden md:flex space-x-8 text-white font-medium text-lg">
+                    <ul className="hidden md:flex space-x-8 text-white font-medium text-lg flex flex-row items-center gap-3">
                         {navData.navLinks.map((link) => (
                             <li key={link.id}>
                                 <Link
@@ -34,6 +35,7 @@ export default function Navbar() {
                                 </Link>
                             </li>
                         ))}
+                        <LoginBtn />
                     </ul>
 
                     {/* Mobile Hamburger */}
@@ -62,6 +64,7 @@ export default function Navbar() {
                                     </a>
                                 </li>
                             ))}
+                            <LoginBtn />
                         </ul>
                     </div>
                 )}
