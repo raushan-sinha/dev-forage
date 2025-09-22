@@ -16,7 +16,7 @@ export default function Footer() {
     return (
         <footer className="bg-gray-900 text-gray-300 py-10 px-6 md:px-20">
             <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-10">
-                <div>
+                <div className="-mb-4">
                     <h2 className="text-base font-bold text-black tracking-wide logo-text cursor-pointer">
                         {footerData.brand.name}
                     </h2>
@@ -27,7 +27,7 @@ export default function Footer() {
 
                 {["quickLinks", "resources"].map((section, i) => (
                     <div key={i}>
-                        <h3 className="text-lg font-semibold text-white mb-4">
+                        <h3 className="text-lg font-semibold text-white mb-2">
                             {section === "quickLinks" ? "Quick Links" : "Resources"}
                         </h3>
                         <ul className="space-y-2">
@@ -46,7 +46,7 @@ export default function Footer() {
                 ))}
 
                 <div>
-                    <h3 className="text-lg font-semibold text-white mb-4">Follow Us</h3>
+                    <h3 className="text-lg font-semibold text-white mb-2">Follow Us</h3>
                     <div className="flex space-x-4 text-2xl">
                         {footerData.socialLinks.map((social, idx) => (
                             <a
