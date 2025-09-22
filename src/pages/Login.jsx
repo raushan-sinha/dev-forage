@@ -8,16 +8,12 @@ export default function Login() {
         <>
             <Navbar />
 
-            <div className="flex items-center justify-center bg-[#101923] px-4 sm:px-6 lg:px-8 min-h-screen">
-                <div className="bg-[#f9dc5c] shadow-lg rounded-2xl p-6 sm:p-8 md:p-10 w-full max-w-md mt-24 md:mt-28">
+            <div className="flex items-center justify-center bg-gray-900 px-4 sm:px-6 lg:px-8 min-h-screen">
+                <div className="bg-gray-800 shadow-lg rounded-2xl p-6 sm:p-8 md:p-10 w-full max-w-md mt-24 md:mt-28 text-white">
                     {/* Heading */}
-                    <h2 className="text-2xl md:text-3xl font-mono text-center text-gray-800 mb-4">
+                    <h2 className="text-3xl md:text-3xl font-bold text-center text-white-800 mb-6">
                         {loginData.heading}
                     </h2>
-                    <p className="text-center text-sm md:text-base text-gray-500 mb-8 font-mono">
-                        {loginData.subText}
-                    </p>
-
                     {/* Form */}
                     <form className="space-y-6">
                         {loginData.fields.map((field) => (
@@ -62,7 +58,7 @@ export default function Login() {
                                 type="checkbox"
                                 id="remember"
                                 name="remember"
-                                autoComplete="on" 
+                                autoComplete="on"
                                 className="h-4 w-4 text-blue-500 rounded border-gray-300"
                             />
                             <label htmlFor="remember" className="ml-2 text-sm text-black-50 font-mono">

@@ -1,6 +1,5 @@
 export const loginData = {
-    heading: "Welcome back",
-    subText: "Please enter your details to Login in DevForage",
+    heading: "Login",
     fields: [
         {
             id: "email",

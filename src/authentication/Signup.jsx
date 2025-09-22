@@ -1,13 +1,10 @@
 import React from "react";
 import { signupData } from "../project-data/signupData";
 import { Link } from "react-router-dom";
-import Navbar from "../components/Navbar/Navbar";
 
 export default function Signup() {
     return (
         <>
-            <Navbar />
-
             <div className="flex items-center justify-center bg-[#101923] px-4 sm:px-6 lg:px-8 min-h-screen mt-12">
                 <div className="bg-white shadow-lg rounded-2xl p-8 w-full max-w-md">
                     <h2 className="text-2xl font-bold text-center text-gray-900 mb-2">
