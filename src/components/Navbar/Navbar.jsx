@@ -68,7 +68,7 @@ export default function Navbar() {
                                 </li>
                             ))}
                             <Link to="/login">
-                                <button className="px-5 py-2 rounded-lg bg-blue-600 text-white font-medium hover:bg-blue-700 transition duration-300">
+                                <button onClick={() => setIsOpen(false)} className="px-5 py-2 rounded-lg bg-blue-600 text-white font-medium hover:bg-blue-700 transition duration-300">
                                     Login
                                 </button>
                             </Link>
