@@ -1,6 +1,6 @@
 import React from "react";
-import { signupData } from "../project-data/signupData";
 import { Link } from "react-router-dom";
+import { signupData } from "./signupData";
 
 export default function Signup() {
     return (

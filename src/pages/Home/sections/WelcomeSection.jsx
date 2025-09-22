@@ -1,5 +1,6 @@
 import React from 'react';
 import { welcomeData } from '../data/welcomeData';
+import { Link } from 'react-router-dom';
 
 export default function WelcomeSection() {
     return (
@@ -15,12 +16,12 @@ export default function WelcomeSection() {
                     <p className="text-sm sm:text-base lg:text-lg text-gray-200 max-w-3xl mb-8">
                         {welcomeData.description}
                     </p>
-                    <a
-                        href={welcomeData.ctaLink}
+                    <Link
+                        to='/login'
                         className="inline-block bg-indigo-500 hover:bg-indigo-600 text-white text-base sm:text-lg font-semibold px-6 sm:px-8 py-3 rounded-xl shadow-lg transition-transform transform hover:scale-105"
                     >
                         {welcomeData.ctaText}
-                    </a>
+                    </Link>
                 </div>
                 <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-indigo-700/20 via-blue-800/10 to-transparent pointer-events-none"></div>
             </section>
