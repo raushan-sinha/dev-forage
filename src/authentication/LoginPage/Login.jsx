@@ -1,11 +1,13 @@
 import { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { loginData } from "./loginData";
+import Alert from '@mui/material/Alert';
 
 export default function Login() {
     const [remember, setRemember] = useState(false);
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [error, setError] = useState('')
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -23,6 +25,11 @@ export default function Login() {
     //TODO: Login Form logic -
     const handleSubmit = (e) => {
         e.preventDefault();
+        if (email.trim() === '' || password.trim() === '') {
+            setError('Please fill in all fields.');
+            return;
+        }
+
         //? login call goes here
         if (remember) {
             localStorage.setItem("dev_remember", "true");
@@ -44,6 +51,13 @@ export default function Login() {
                     <h2 className="text-3xl md:text-3xl font-bold text-center text-white-800 mb-6">
                         {loginData.heading}
                     </h2>
+
+                    {error && (
+                        <Alert severity="warning" onClose={() => setError('')}>
+                            {error}
+                        </Alert>
+                    )}
+                    <br />
                     {/* Form */}
                     <form className="space-y-6" onSubmit={handleSubmit}>
                         {loginData.fields.map((field) => (
@@ -67,7 +81,6 @@ export default function Login() {
                                                 : "on"
                                     }
                                     className="w-full px-4 py-3 text-black-50 border border-black-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none font-mono"
-                                    required
                                     value={
                                         field.id === "email"
                                             ? email
