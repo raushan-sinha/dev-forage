@@ -1,8 +1,41 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import { loginData } from "./loginData";
 
 export default function Login() {
+    const [remember, setRemember] = useState(false);
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        const savedRemember = localStorage.getItem('dev_remember') === 'true';
+        const savedEmail = localStorage.getItem('dev_email') || '';
+        const savedPassword = localStorage.getItem('dev_password') || '';
+
+        if (savedRemember) {
+            setRemember(true);
+            setEmail(savedEmail);
+            setPassword(savedPassword);
+        }
+    }, []);
+
+    //TODO: Login Form logic -
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        //? login call goes here
+        if (remember) {
+            localStorage.setItem("dev_remember", "true");
+            localStorage.setItem("dev_email", email);
+            localStorage.setItem("dev_password", password);
+        } else {
+            localStorage.removeItem("dev_remember");
+            localStorage.removeItem("dev_email");
+            localStorage.removeItem("dev_password");
+        }
+        navigate('/');
+    };
+
     return (
         <>
             <div className="flex items-center justify-center bg-gray-900 px-4 sm:px-6 lg:px-8 min-h-screen">
@@ -12,7 +45,7 @@ export default function Login() {
                         {loginData.heading}
                     </h2>
                     {/* Form */}
-                    <form className="space-y-6">
+                    <form className="space-y-6" onSubmit={handleSubmit}>
                         {loginData.fields.map((field) => (
                             <div key={field.id}>
                                 <label
@@ -35,6 +68,17 @@ export default function Login() {
                                     }
                                     className="w-full px-4 py-3 text-black-50 border border-black-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none font-mono"
                                     required
+                                    value={
+                                        field.id === "email"
+                                            ? email
+                                            : field.id === "password"
+                                                ? password
+                                                : undefined
+                                    }
+                                    onChange={(e) => {
+                                        if (field.id === "email") setEmail(e.target.value);
+                                        if (field.id === "password") setPassword(e.target.value);
+                                    }}
                                 />
                                 {field.id === "password" && (
                                     <div className="flex justify-end mt-2">
@@ -57,6 +101,8 @@ export default function Login() {
                                 name="remember"
                                 autoComplete="on"
                                 className="h-4 w-4 text-blue-500 rounded border-gray-300"
+                                checked={remember}
+                                onChange={(e) => setRemember(e.target.checked)}
                             />
                             <label htmlFor="remember" className="ml-2 text-sm text-black-50 font-mono">
                                 Remember me
