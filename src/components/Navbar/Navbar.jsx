@@ -3,7 +3,7 @@ import { useState } from "react";
 import MenuIcon from '@mui/icons-material/Menu';
 import ClearIcon from '@mui/icons-material/Clear';
 import { Link, useNavigate } from 'react-router-dom';
-import { navData } from './navbarData';
+import { navbarData } from './navbarData';
 
 export default function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
@@ -20,12 +20,12 @@ export default function Navbar() {
                 <div className="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between">
                     {/* Logo */}
                     <div className="text-3xl font-bold text-black tracking-wide logo-text cursor-pointer" onClick={handleNavigate}>
-                        {navData.heading}
+                        {navbarData.heading}
                     </div>
 
                     {/* Desktop Links */}
                     <ul className="hidden md:flex space-x-8 text-white font-medium text-lg flex-row items-center gap-3">
-                        {navData.navLinks.map((link) => (
+                        {navbarData.navLinks.map((link) => (
                             <li key={link.id}>
                                 <Link
                                     to={link.href}
@@ -56,7 +56,7 @@ export default function Navbar() {
                 {isOpen && (
                     <div className="md:hidden bg-[#c6def6] backdrop-blur-lg shadow-lg">
                         <ul className="flex flex-col items-center space-y-6 py-6 text-black font-medium">
-                            {navData.navLinks.map((link) => (
+                            {navbarData.navLinks.map((link) => (
                                 <li key={link.id}>
                                     <a
                                         href={link.href}

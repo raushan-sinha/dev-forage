@@ -1,4 +1,4 @@
-export const navData = {
+export const navbarData = {
     heading: 'DevForage',
     navLinks: [
         { id: 1, name: "Home", href: "/" },
