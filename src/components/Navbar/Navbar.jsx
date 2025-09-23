@@ -24,7 +24,7 @@ export default function Navbar() {
                     </div>
 
                     {/* Desktop Links */}
-                    <ul className="hidden md:flex space-x-8 text-white font-medium text-lg flex flex-row items-center gap-3">
+                    <ul className="hidden md:flex space-x-8 text-white font-medium text-lg flex-row items-center gap-3">
                         {navData.navLinks.map((link) => (
                             <li key={link.id}>
                                 <Link
