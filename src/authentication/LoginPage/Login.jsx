@@ -1,6 +1,6 @@
 import React from "react";
-import { loginData } from "../project-data/loginData";
 import { Link } from "react-router-dom";
+import { loginData } from "./loginData";
 
 export default function Login() {
     return (
