@@ -24,7 +24,7 @@ export default function Navbar() {
                     </div>
 
                     {/* Desktop Links */}
-                    <ul className="hidden md:flex space-x-8 text-white font-medium text-lg flex-row items-center gap-3">
+                    <ul className="hidden md:flex text-white font-medium text-lg flex-row items-center gap-5 md:gap-10">
                         {navbarData.navLinks.map((link) => (
                             <li key={link.id}>
                                 <Link
@@ -35,7 +35,7 @@ export default function Navbar() {
                             </li>
                         ))}
                         <Link to="/login">
-                            <button className="px-5 py-2 rounded-lg bg-blue-600 text-white font-medium hover:bg-blue-700 transition duration-300">
+                            <button className="px-5 py-2 rounded-lg bg-blue-600 text-white font-medium hover:bg-blue-700 transition duration-300 cursor-pointer">
                                 Login
                             </button>
                         </Link>
@@ -68,7 +68,7 @@ export default function Navbar() {
                                 </li>
                             ))}
                             <Link to="/login">
-                                <button onClick={() => setIsOpen(false)} className="px-5 py-2 rounded-lg bg-blue-600 text-white font-medium hover:bg-blue-700 transition duration-300 cursor-pointer">
+                                <button onClick={() => setIsOpen(false)} className="px-5 py-2 rounded-lg bg-blue-600 text-white font-medium hover:bg-blue-700 transition duration-300">
                                     Login
                                 </button>
                             </Link>

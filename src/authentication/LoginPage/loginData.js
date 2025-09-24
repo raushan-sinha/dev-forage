@@ -1,19 +1,4 @@
 export const loginData = {
-    heading: "Login",
-    fields: [
-        {
-            id: "email",
-            label: "Email",
-            type: "email",
-            placeholder: "you@example.com",
-        },
-        {
-            id: "password",
-            label: "Password",
-            type: "password",
-            placeholder: "••••••••",
-        },
-    ],
     socials: [
         {
             id: "google",
