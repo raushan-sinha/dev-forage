@@ -8,7 +8,7 @@ export const footerData = {
         { name: "Home", href: "/" },
         { name: "Courses", href: "/courses" },
         { name: "Roadmaps", href: "/roadmaps" },
-        { name: "Contact", href: "/contact" },
+        { name: "Support", href: "/support" },
     ],
     resources: [
         { name: "Blog", href: "/blog" },
