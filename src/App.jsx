@@ -4,18 +4,19 @@ import Login from './authentication/LoginPage/Login';
 import Signup from './authentication/SignupPage/Signup';
 import Navbar from './components/Navbar/Navbar';
 import Home from './pages/Home/Home';
-
+import Faq from './pages/FAQs/Faq';
 
 export default function App() {
     return (
         <>
             <BrowserRouter>
                 <Navbar />
-                
+
                 <Routes>
                     <Route path='/' element={<Home />} />
                     <Route path='/login' element={<Login />} />
                     <Route path='/signup' element={<Signup />} />
+                    <Route path='/faqs' element={<Faq />} />
                 </Routes>
             </BrowserRouter>
         </>

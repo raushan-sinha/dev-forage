@@ -4,6 +4,7 @@ import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import XIcon from "@mui/icons-material/X";
 import InstagramIcon from "@mui/icons-material/Instagram";
+import { Link } from "react-router-dom";
 
 const icons = {
     github: <GitHubIcon />,
@@ -33,12 +34,12 @@ export default function Footer() {
                         <ul className="space-y-2">
                             {footerData[section].map((link, idx) => (
                                 <li key={idx}>
-                                    <a
-                                        href={link.href}
+                                    <Link
+                                        to={link.href}
                                         className="hover:text-blue-400 transition-colors"
                                     >
                                         {link.name}
-                                    </a>
+                                    </Link>
                                 </li>
                             ))}
                         </ul>
