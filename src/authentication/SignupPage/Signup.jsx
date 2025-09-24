@@ -5,8 +5,8 @@ import { signupData } from "./signupData";
 export default function Signup() {
     return (
         <>
-            <div className="flex items-center justify-center bg-[#101923] px-4 sm:px-6 lg:px-8 min-h-screen mt-12">
-                <div className="bg-white shadow-lg rounded-2xl p-8 w-full max-w-md">
+            <div className="flex items-center justify-center bg-[#101923] px-4 p-6 sm:px-6 lg:px-8 min-h-screen mt-12">
+                <div className="bg-[#e6f5fa] shadow-lg rounded-2xl p-8 w-full max-w-md mt-10">
                     <h2 className="text-2xl font-bold text-center text-gray-900 mb-2">
                         {signupData.heading}
                     </h2>
@@ -30,7 +30,7 @@ export default function Signup() {
                                     placeholder={field.placeholder}
                                     autoComplete={field.autocomplete}
                                     required
-                                    className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring-sky-500 focus:border-sky-500 sm:text-sm"
+                                    className="mt-1 block w-full px-3 py-2 border border-gray-600 rounded-lg shadow-sm focus:ring-sky-500 focus:border-sky-500 sm:text-sm"
                                 />
                             </div>
                         ))}
