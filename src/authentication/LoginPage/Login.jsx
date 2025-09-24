@@ -45,7 +45,7 @@ export default function Login() {
 
     return (
         <>
-            <div className="flex items-center justify-center bg-gray-900 px-4 sm:px-6 lg:px-8 min-h-screen">
+            <div className="flex items-center justify-center bg-gray-900 px-4 sm:px-6 lg:px-8 min-h-screen p-10">
                 <div className="bg-gray-800 shadow-lg rounded-2xl p-6 sm:p-8 md:p-10 w-full max-w-md mt-24 md:mt-28 text-white">
                     {/* Heading */}
                     <h2 className="text-3xl md:text-3xl font-bold text-center text-white-800 mb-6">
@@ -125,7 +125,7 @@ export default function Login() {
                         {/* Submit Button */}
                         <button
                             type="submit"
-                            className="w-full bg-blue-600 text-white py-3 rounded-lg font-medium font-mono hover:bg-blue-700 transition-colors"
+                            className="w-full bg-blue-600 text-white py-3 rounded-lg font-medium font-mono hover:bg-blue-700 transition-colors cursor-pointer"
                         >
                             Login
                         </button>
