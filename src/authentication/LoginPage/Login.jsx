@@ -1,13 +1,11 @@
 import { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { loginData } from "./loginData";
-import Alert from '@mui/material/Alert';
 
 export default function Login() {
     const [remember, setRemember] = useState(false);
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const [error, setError] = useState('')
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -25,10 +23,6 @@ export default function Login() {
     //TODO: Login Form logic -
     const handleSubmit = (e) => {
         e.preventDefault();
-        if (email.trim() === '' || password.trim() === '') {
-            setError('Please fill in all fields.');
-            return;
-        }
 
         //? login call goes here
         if (remember) {
@@ -45,19 +39,12 @@ export default function Login() {
 
     return (
         <>
-            <div className="flex items-center justify-center bg-gray-900 px-4 sm:px-6 lg:px-8 min-h-screen p-10">
+            <div className="flex items-center justify-center bg-gray-900 px-4 sm:px-6 lg:px-8 min-h-screen p-8">
                 <div className="bg-gray-800 shadow-lg rounded-2xl p-6 sm:p-8 md:p-10 w-full max-w-md mt-24 md:mt-28 text-white">
                     {/* Heading */}
                     <h2 className="text-3xl md:text-3xl font-bold text-center text-white-800 mb-6">
                         {loginData.heading}
                     </h2>
-
-                    {error && (
-                        <Alert severity="warning" onClose={() => setError('')}>
-                            {error}
-                        </Alert>
-                    )}
-                    <br />
                     {/* Form */}
                     <form className="space-y-6" onSubmit={handleSubmit}>
                         {loginData.fields.map((field) => (
@@ -80,6 +67,7 @@ export default function Login() {
                                                 ? "current-password"
                                                 : "on"
                                     }
+                                    required
                                     className="w-full px-4 py-3 text-black-50 border border-black-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none font-mono"
                                     value={
                                         field.id === "email"
