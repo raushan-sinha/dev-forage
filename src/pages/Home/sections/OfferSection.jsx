@@ -4,7 +4,7 @@ import { offerData } from '../data/offersData';
 export default function OfferSection() {
     return (
         <>
-            <section className="py-20 px-4 sm:px-6 lg:px-8">
+            <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-[#fcebe0] to-[#e7f5fd]">
                 <div className="max-w-7xl mx-auto">
                     <div className="text-center mb-16">
                         <h2 className="text-3xl md:text-5xl font-bold text-gray-800 mb-6">

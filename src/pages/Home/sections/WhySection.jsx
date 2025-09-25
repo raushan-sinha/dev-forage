@@ -4,7 +4,7 @@ import { whyData } from '../data/whyData';
 export default function WhySection() {
     return (
         <>
-            <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50">
+            <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-[#f1eaff] to-[#ffeded] ">
                 <div className="max-w-7xl mx-auto">
                     <div className="text-center mb-12">
                         <h2 className="text-3xl md:text-5xl font-bold text-gray-800 mb-6">
