@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { loginData } from "./loginData";
+import { Apple, GitHub, Google } from "@mui/icons-material";
 
 export default function Login() {
     const [remember, setRemember] = useState(false);
@@ -31,6 +31,13 @@ export default function Login() {
 
         navigate('/');
     };
+
+    //TODO: Social Links -
+    const socialLinks = [
+        { id: 1, icon: <Google /> },
+        { id: 2, icon: <Apple /> },
+        { id: 3, icon: <GitHub /> }
+    ]
 
     return (
         <div className="flex items-center justify-center bg-gray-900 px-4 sm:px-6 lg:px-8 min-h-screen p-8">
@@ -72,10 +79,21 @@ export default function Login() {
                 </div>
 
                 <div className="flex space-x-5 justify-center">
-                    {loginData.socials.map((social) => (
-                        <button key={social.id} className="flex items-center justify-center w-12 h-12 bg-gray-100 rounded-full shadow hover:bg-gray-200 transition cursor-pointer">
-                            <img src={social.img} alt={social.alt} className="w-6 h-6" />
+                    {socialLinks.map((item) => (
+                        <button
+                            key={item.id}
+                            className="flex items-center justify-center w-12 h-12 rounded-full 
+             shadow-md bg-gray-100 dark:bg-gray-800 
+             transition-colors duration-300 cursor-pointer 
+             hover:bg-blue-500"
+                        >
+                            <span className="text-gray-700 dark:text-gray-200 
+                   transition-colors duration-300 
+                   group-hover:text-white">
+                                {item.icon}
+                            </span>
                         </button>
+
                     ))}
                 </div>
 
