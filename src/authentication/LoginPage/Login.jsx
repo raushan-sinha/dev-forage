@@ -1,109 +1,156 @@
 import { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { Apple, GitHub, Google } from "@mui/icons-material";
 
 export default function Login() {
-    const [remember, setRemember] = useState(false);
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const navigate = useNavigate();
 
+    //TODO: Form data storage of the User -
     useEffect(() => {
-        const savedRemember = localStorage.getItem("remember") === "true";
-        const savedEmail = localStorage.getItem("email") || "";
+        const savedEmail = localStorage.getItem('email');
+        const savedPassword = localStorage.getItem('password');
 
-        if (savedRemember && savedEmail) {
-            setRemember(true);
+        if (savedEmail && savedPassword) {
             setEmail(savedEmail);
+            setPassword(savedPassword);
         }
-    }, []);
+    });
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        localStorage.setItem('email', email);
+        localStorage.setItem('password', password);
+    }
 
-        if (remember) {
-            localStorage.setItem("remember", "true");
-            localStorage.setItem("email", email);
-        } else {
-            localStorage.removeItem("remember");
-            localStorage.removeItem("email");
-        }
-
-        navigate('/');
-    };
 
     //TODO: Social Links -
-    const socialLinks = [
-        { id: 1, icon: <Google /> },
-        { id: 2, icon: <Apple /> },
-        { id: 3, icon: <GitHub /> }
-    ]
+    const socialLinksData = [
+        { id: 1, src: 'https://ucarecdn.com/8f25a2ba-bdcf-4ff1-b596-088f330416ef/', alt: 'Google' },
+        { id: 2, src: 'https://ucarecdn.com/95eebb9c-85cf-4d12-942f-3c40d7044dc6/', alt: 'LinkedIn' },
+        { id: 3, src: 'https://cdn-icons-png.flaticon.com/128/733/733553.png', alt: 'GitHub' },
+        { id: 4, src: 'https://ucarecdn.com/6f56c0f1-c9c0-4d72-b44d-51a79ff38ea9/', alt: 'Facebook' },
+        { id: 5, src: 'https://cdn-icons-png.flaticon.com/128/5969/5969020.png', alt: 'X' },
+    ];
+
 
     return (
-        <div className="flex items-center justify-center bg-gray-900 px-4 sm:px-6 lg:px-8 min-h-screen p-8">
-            <div className="bg-gray-800 shadow-lg rounded-2xl p-6 sm:p-8 md:p-10 w-full max-w-md mt-24 md:mt-28 text-white">
-                <h2 className="text-3xl font-bold text-center mb-6">
-                    Login
-                </h2>
-
-                <form className="space-y-6" onSubmit={handleSubmit}>
-                    <label htmlFor="email" className="block text-sm font-mono text-black-50 mb-1">
-                        Email
-                    </label>
-
-                    <input type="email" id="email" placeholder="you@example.com" autoComplete="email" onChange={(e) => setEmail(e.target.value)} value={email} required className="w-full px-4 py-3 text-black-50 border border-black-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none font-mono" />
-
-                    <label htmlFor="password" className="block text-sm font-mono text-black-50 mb-1">
-                        Password
-                    </label>
-
-                    <input type="password" id="password" placeholder="••••••••" autoComplete="current-password" onChange={(e) => setPassword(e.target.value)} value={password} required title="Password must be at least 8 characters and include uppercase, lowercase, number, and special character" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$" className="w-full px-4 py-3 text-black-50 border border-black-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none font-mono" />
-
-                    <div className="flex items-center">
-                        <input type="checkbox" id="remember" checked={remember} onChange={(e) => setRemember(e.target.checked)} className="h-4 w-4 text-blue-500 rounded border-gray-300 cursor-pointer" />
-
-                        <label htmlFor="remember" className="ml-2 text-sm text-black-50 font-mono cursor-pointer">
-                            Remember me
-                        </label>
-                    </div>
-
-                    <button type="submit" className="w-full bg-blue-600 text-white py-3 rounded-lg font-medium font-mono hover:bg-blue-700 transition-colors cursor-pointer">
-                        Login
-                    </button>
-                </form>
-
-                <div className="my-8 flex items-center justify-center">
-                    <span className="w-1/5 border-b border-black-300"></span>
-                    <span className="text-xs text-black-50 mx-3 font-mono">OR</span>
-                    <span className="w-1/5 border-b border-black-300"></span>
-                </div>
-
-                <div className="flex space-x-5 justify-center">
-                    {socialLinks.map((item) => (
-                        <button
-                            key={item.id}
-                            className="flex items-center justify-center w-12 h-12 rounded-full 
-             shadow-md bg-gray-100 dark:bg-gray-800 
-             transition-colors duration-300 cursor-pointer 
-             hover:bg-blue-500"
+        <div className="flex items-center justify-center bg-gray-900 px-4 sm:px-6 lg:px-8 min-h-screen p-8 mt-15">
+            <div className="flex justify-center items-center h-full w-full">
+                <div className="grid gap-8">
+                    <section
+                        id="back-div"
+                        className="bg-gradient-to-r from-blue-500 to-purple-500 rounded-3xl"
+                    >
+                        <div
+                            className="border-8 border-transparent rounded-xl bg-white dark:bg-gray-900 shadow-xl p-8 m-2"
                         >
-                            <span className="text-gray-700 dark:text-gray-200 
-                   transition-colors duration-300 
-                   group-hover:text-white">
-                                {item.icon}
-                            </span>
-                        </button>
+                            <h1
+                                className="text-5xl font-bold text-center cursor-default dark:text-gray-300 text-gray-900"
+                            >
+                                Log in
+                            </h1>
+                            <form
+                                action="#"
+                                method="post"
+                                className="space-y-6"
+                                onSubmit={handleSubmit}
+                                autoComplete="on"
+                            >
+                                <div>
+                                    <label
+                                        htmlFor="email"
+                                        className="block mb-2 text-lg dark:text-gray-300"
+                                    >
+                                        Email
+                                    </label>
+                                    <input
+                                        id="email"
+                                        name="email"
+                                        className="border p-3 shadow-md dark:bg-indigo-700 dark:text-gray-300 dark:border-gray-700 border-gray-300 rounded-lg w-full focus:ring-2 focus:ring-blue-500 transition transform hover:scale-105 duration-300"
+                                        type="email"
+                                        placeholder="Email"
+                                        required
+                                        value={email}
+                                        onChange={(e) => setEmail(e.target.value)}
+                                        autoComplete="username"
+                                    />
+                                </div>
 
-                    ))}
+                                <div>
+                                    <label
+                                        htmlFor="password"
+                                        className="block mb-2 text-lg dark:text-gray-300"
+                                    >
+                                        Password
+                                    </label>
+                                    <input
+                                        id="password"
+                                        name="password"
+                                        className="border p-3 shadow-md dark:bg-indigo-700 dark:text-gray-300 dark:border-gray-700 border-gray-300 rounded-lg w-full focus:ring-2 focus:ring-blue-500 transition transform hover:scale-105 duration-300"
+                                        type="password"
+                                        placeholder="Password"
+                                        required
+                                        value={password}
+                                        onChange={(e) => setPassword(e.target.value)}
+                                        autoComplete="current-password"
+                                    />
+                                </div>
+
+                                <a
+                                    href="#"
+                                    className="text-blue-400 text-sm transition hover:underline"
+                                >
+                                    Forget your password?
+                                </a>
+
+                                <button
+                                    className="w-full p-3 mt-4 text-white bg-gradient-to-r from-blue-500 to-purple-500 rounded-lg hover:scale-105 transition transform duration-300 shadow-lg focus:outline-none focus:ring-2 focus:ring-blue-500 cursor-pointer"
+                                    type="submit"
+                                >
+                                    LOG IN
+                                </button>
+                            </form>
+
+                            <div className="flex flex-col mt-4 text-sm text-center dark:text-gray-300">
+                                <p>
+                                    Don't have an account?
+                                    <a href="#" className="text-blue-400 transition hover:underline"
+                                    >Sign Up</a
+                                    >
+                                </p>
+                            </div>
+                            <div id="third-party-auth" className="flex justify-center gap-4 mt-5">
+                                {socialLinksData.map((item) => (
+                                    <button
+                                        className="p-2 rounded-lg hover:scale-105 transition transform duration-300 shadow-lg cursor-pointer"
+                                        key={item.id}
+                                    >
+                                        <img
+                                            className="w-6 h-6"
+                                            loading="lazy"
+                                            src={item.src}
+                                            alt={item.alt}
+                                        />
+                                    </button>
+                                ))}
+                            </div>
+                            <div className="mt-4 text-center text-sm text-gray-500">
+                                <p>
+                                    By signing in, you agree to our
+                                    <a href="#" className="text-blue-400 transition hover:underline"
+                                    >Terms</a
+                                    >
+                                    and
+                                    <a href="#" className="text-blue-400 transition hover:underline"
+                                    >Privacy Policy</a
+                                    >.
+                                </p>
+                            </div>
+                        </div>
+                    </section>
                 </div>
-
-                <p className="mt-8 text-center text-sm text-black-50 font-mono">
-                    Don’t have an account? {" "}
-                    <Link to="/signup" className="underline font-medium hover:underline">
-                        Signup
-                    </Link>
-                </p>
             </div>
+
         </div>
     );
 }
