@@ -44,14 +44,14 @@ export default function Login() {
                             className="border-8 border-transparent rounded-xl bg-white dark:bg-gray-900 shadow-xl p-8 m-2"
                         >
                             <h1
-                                className="text-5xl font-bold text-center cursor-default dark:text-gray-300 text-gray-900"
+                                className="text-4xl font-bold text-center cursor-default dark:text-gray-300 text-gray-900"
                             >
                                 Log in
                             </h1>
                             <form
                                 action="#"
                                 method="post"
-                                className="space-y-6"
+                                className="space-y-6 mt-10"
                                 onSubmit={handleSubmit}
                                 autoComplete="on"
                             >
