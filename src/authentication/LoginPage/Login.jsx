@@ -51,7 +51,7 @@ export default function Login() {
                             <form
                                 action="#"
                                 method="post"
-                                className="space-y-6 mt-10"
+                                className="space-y-6 mt-5"
                                 onSubmit={handleSubmit}
                                 autoComplete="on"
                             >
