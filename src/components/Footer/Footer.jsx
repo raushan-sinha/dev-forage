@@ -26,13 +26,14 @@ export default function Footer() {
                     </p>
                 </div>
 
-                {["quickLinks", "resources"].map((section, i) => (
-                    <div key={i}>
+
+                {footerData.sections.map((section) => (
+                    <div key={section.id}>
                         <h3 className="text-lg font-semibold text-white mb-2">
-                            {section === "quickLinks" ? "Quick Links" : "Resources"}
+                            {section.title}
                         </h3>
-                        <ul className="space-y-2">
-                            {footerData[section].map((link, idx) => (
+                        {section.links.map((link, idx) => (
+                            <ul className="space-y-2">
                                 <li key={idx}>
                                     <Link
                                         to={link.href}
@@ -41,8 +42,8 @@ export default function Footer() {
                                         {link.name}
                                     </Link>
                                 </li>
-                            ))}
-                        </ul>
+                            </ul>
+                        ))}
                     </div>
                 ))}
 
