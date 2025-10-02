@@ -17,6 +17,8 @@ export default function Footer() {
     return (
         <footer className="bg-gray-900 text-gray-300 py-10 px-6 md:px-20">
             <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-10">
+
+                {/* Brand */}
                 <div className="-mb-4">
                     <h2 className="text-3xl font-bold text-black tracking-wide logo-text cursor-pointer">
                         {footerData.brand.name}
@@ -26,15 +28,15 @@ export default function Footer() {
                     </p>
                 </div>
 
-
+                {/* Sections */}
                 {footerData.sections.map((section) => (
                     <div key={section.id}>
                         <h3 className="text-lg font-semibold text-white mb-2">
                             {section.title}
                         </h3>
-                        {section.links.map((link, idx) => (
-                            <ul className="space-y-2">
-                                <li key={idx}>
+                        <ul className="space-y-2">
+                            {section.links.map((link) => (
+                                <li key={link.name}>
                                     <Link
                                         to={link.href}
                                         className="hover:text-blue-400 transition-colors"
@@ -42,17 +44,18 @@ export default function Footer() {
                                         {link.name}
                                     </Link>
                                 </li>
-                            </ul>
-                        ))}
+                            ))}
+                        </ul>
                     </div>
                 ))}
 
+                {/* Social Links */}
                 <div>
                     <h3 className="text-lg font-semibold text-white mb-2">Follow Us</h3>
                     <div className="flex space-x-4 text-2xl">
-                        {footerData.socialLinks.map((social, idx) => (
+                        {footerData.socialLinks.map((social) => (
                             <a
-                                key={idx}
+                                key={social.icon}
                                 href={social.href}
                                 target="_blank"
                                 rel="noopener noreferrer"
@@ -65,6 +68,7 @@ export default function Footer() {
                 </div>
             </div>
 
+            {/* Copyright */}
             <div className="text-center border-t border-gray-700 mt-10 pt-6 text-sm">
                 {footerData.copyright}
             </div>

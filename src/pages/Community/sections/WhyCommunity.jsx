@@ -19,7 +19,7 @@ export default function WhyCommunity() {
                         key={i}
                         className="p-6 bg-white dark:bg-gray-800 rounded-xl shadow-md hover:shadow-lg transition"
                     >
-                        ✅ {item}
+                        {item}
                     </li>
                 ))}
             </ul>

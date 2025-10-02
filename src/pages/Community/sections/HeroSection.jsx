@@ -11,10 +11,10 @@ export default function HeroSection() {
                 collaboration, and networking drive your learning journey forward.
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
-                <button className="px-6 py-3 bg-blue-600 hover:bg-blue-700 rounded-xl shadow-md transition">
+                <button className="px-6 py-3 bg-blue-600 hover:bg-blue-700 rounded-xl shadow-md transition cursor-pointer">
                     🚀 Join Discussions
                 </button>
-                <button className="px-6 py-3 bg-gray-700 hover:bg-gray-600 rounded-xl shadow-md transition">
+                <button className="px-6 py-3 bg-gray-700 hover:bg-gray-600 rounded-xl shadow-md transition cursor-pointer">
                     👥 Connect with Developers
                 </button>
             </div>
