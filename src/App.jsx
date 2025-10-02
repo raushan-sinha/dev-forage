@@ -6,6 +6,7 @@ import Navbar from './components/Navbar/Navbar';
 import Home from './pages/Home/Home';
 import Faq from './pages/FAQs/Faq';
 import Community from './pages/Community/Community';
+import Blog from './pages/Blog/Blog';
 
 export default function App() {
     return (
@@ -21,8 +22,9 @@ export default function App() {
                     {/* Footer Resources Links */}
                     <Route path='/faqs' element={<Faq />} />
                     <Route path='/community' element={<Community />} />
+                    <Route path='/blog' element={<Blog />} />
                 </Routes>
-            </BrowserRouter>    
+            </BrowserRouter>
         </>
     );
 }
