@@ -28,7 +28,7 @@ export default function WelcomeSection() {
 
                 {/* Call to Action */}
                 <Link
-                    to="/register"
+                    to="/login"
                     className="inline-block bg-indigo-500 hover:bg-indigo-600 text-white text-base sm:text-lg font-semibold px-6 sm:px-8 py-3 rounded-xl shadow-lg transition-transform transform hover:scale-105"
                 >
                     Start Building with DevForage

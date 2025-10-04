@@ -2,7 +2,7 @@ export const footerData = {
     brand: {
         name: "DevForage",
         description:
-            "Empowering developers with roadmaps, resources, and learning paths to master modern technologies.",
+            "Empowering developers with roadmaps, resources and learning paths to master modern technologies.",
     },
     sections: [
         {
@@ -31,8 +31,8 @@ export const footerData = {
             links: [
                 { name: "About", href: "/about" },
                 { name: "Careers", href: "/careers" },
-                { name: "Contact", href: "/contact" },
-                { name: "Press", href: "/press" },
+                { name: "Terms", href: "/terms" },
+                { name: "Privacy Policy", href: "/privacyPolicy" },
             ],
         },
     ],

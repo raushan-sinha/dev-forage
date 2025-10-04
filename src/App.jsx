@@ -7,6 +7,7 @@ import Home from './pages/Home/Home';
 import Faq from './pages/FAQs/Faq';
 import Community from './pages/Community/Community';
 import Blog from './pages/Blog/Blog';
+import Terms from './pages/Terms/Terms';
 
 export default function App() {
     return (
@@ -23,6 +24,7 @@ export default function App() {
                     <Route path='/faqs' element={<Faq />} />
                     <Route path='/community' element={<Community />} />
                     <Route path='/blog' element={<Blog />} />
+                    <Route path='/terms' element={<Terms />} />
                 </Routes>
             </BrowserRouter>
         </>
