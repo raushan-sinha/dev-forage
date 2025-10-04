@@ -4,78 +4,99 @@ import Footer from "../../components/Footer/Footer";
 
 const termsData = [
     {
+        title: "Introduction",
+        content: [
+            "Welcome to DevForage — a developer-focused learning platform where individuals can explore coding roadmaps, share knowledge, and create reusable React components.",
+            "By accessing or using DevForage, you agree to comply with these Terms and Conditions, which govern your use of our platform, services, and content.",
+            "Please read these terms carefully before using DevForage."
+        ],
+    },
+    {
         title: "Eligibility",
         content: [
-            "Contests are open to all registered DevForage users who are at least 16 years old.",
-            "Employees, affiliates, and immediate family members of DevForage staff are not eligible to participate.",
-            "Users must have an active account and valid email address on DevForage.",
+            "DevForage is open to all individuals aged 13 years or older interested in web development, programming, or related fields.",
+            "Users under 18 must have parental or guardian consent to use the platform.",
+            "You must register with a valid email address to access certain features like course enrollment, posting, or creating components."
         ],
     },
     {
-        title: "Contest Participation",
+        title: "User Responsibilities",
         content: [
-            "Only entries submitted through the official contest platform or submission form will be accepted.",
-            "Each participant may submit one entry per contest, unless otherwise stated.",
-            "Submissions must be the original work of the participant. Plagiarism or infringement of intellectual property rights will result in disqualification.",
-            "DevForage reserves the right to verify the authenticity of any submission.",
+            "You agree to use DevForage responsibly and ethically.",
+            "Do not upload, post, or share any material that is illegal, harmful, or violates intellectual property rights.",
+            "Users are expected to maintain professional and respectful communication in community discussions and comments.",
+            "You are responsible for maintaining the confidentiality of your account credentials and all activities that occur under your account."
         ],
     },
     {
-        title: "Contest Rules",
+        title: "Content Ownership",
         content: [
-            "Each contest will have specific rules, guidelines, and deadlines outlined in the contest announcement.",
-            "Participants must comply with the stated format, theme, and technical requirements.",
-            "DevForage reserves the right to disqualify entries that do not adhere to the rules or are deemed inappropriate or offensive.",
+            "All learning materials, posts, roadmaps, and React components uploaded by users remain their intellectual property.",
+            "By sharing content on DevForage, you grant us a non-exclusive, royalty-free license to display, promote, or feature your content for educational or community purposes.",
+            "DevForage retains the right to remove content that violates our guidelines or legal standards."
         ],
     },
     {
-        title: "Judging & Winners",
+        title: "Learning & Community Features",
         content: [
-            "Contest winners will be selected by DevForage or appointed judges based on criteria such as creativity, originality, and adherence to contest guidelines.",
-            "All decisions of the judges are final and binding.",
-            "Winners will be notified via email and/or DevForage account notifications.",
+            "DevForage allows users to explore structured coding roadmaps, tutorials, and learning materials created by experts or community members.",
+            "You can publish your own articles, coding resources, or reusable React components to help others in the community.",
+            "All shared materials should be original or properly credited to their sources."
         ],
     },
     {
-        title: "Prizes",
+        title: "Prohibited Activities",
         content: [
-            "Contest prizes will be clearly stated in the contest announcement.",
-            "Prizes are non-transferable and cannot be exchanged for cash or other items unless specified.",
-            "DevForage reserves the right to substitute prizes of equal or greater value in the event of unavailability.",
+            "Misusing the platform for spam, advertisements, or malicious software distribution is strictly prohibited.",
+            "Copying or redistributing paid or premium content without authorization will result in immediate account suspension.",
+            "Users must not attempt to bypass security systems, misuse APIs, or exploit vulnerabilities in DevForage."
+        ],
+    },
+    {
+        title: "Privacy & Data Usage",
+        content: [
+            "DevForage values your privacy. Personal information is collected only to provide and improve our services.",
+            "We may use your data to personalize your experience, send educational updates, or notify you of platform changes.",
+            "Your information will never be sold or shared with third parties without consent, except as required by law."
         ],
     },
     {
         title: "Intellectual Property",
         content: [
-            "Participants retain ownership of their work but grant DevForage a non-exclusive, worldwide, royalty-free license to display, promote, and use the submission for marketing and educational purposes.",
-            "Participants represent and warrant that their submissions do not infringe upon any third-party intellectual property rights.",
+            "All platform design, logos, trademarks, and original content are the property of DevForage.",
+            "Users may not copy, modify, or distribute platform assets without written permission.",
+            "Any unauthorized use of DevForage branding or materials will be subject to legal action."
         ],
     },
     {
-        title: "Privacy",
+        title: "Account Suspension & Termination",
         content: [
-            "Personal information collected for contest participation will be used solely for contest administration and prize distribution.",
-            "By participating, participants consent to DevForage contacting them regarding contest-related matters.",
+            "DevForage reserves the right to suspend or terminate user accounts that violate these Terms or harm the platform’s integrity.",
+            "Repeated infringement of intellectual property rights, spreading misinformation, or engaging in harassment will lead to permanent bans.",
+            "Users may request account deletion by contacting DevForage support."
         ],
     },
     {
-        title: "Liability",
+        title: "Platform Updates & Modifications",
         content: [
-            "DevForage is not responsible for any technical errors, lost entries, or issues arising from internet connectivity or device malfunctions.",
-            "Participants enter contests at their own risk. DevForage shall not be liable for any damage, loss, or injury resulting from participation or prize acceptance.",
+            "DevForage may update features, tools, or terms periodically to improve the platform experience.",
+            "Continued use of DevForage after updates constitutes acceptance of the revised terms.",
+            "Major policy changes will be communicated via email or platform notifications."
         ],
     },
     {
-        title: "Modification & Termination",
+        title: "Limitation of Liability",
         content: [
-            "DevForage reserves the right to modify, suspend, or cancel any contest at any time without prior notice.",
-            "Contest rules may be updated, and participants are responsible for reviewing the latest terms.",
+            "DevForage is provided 'as is' without warranties of any kind.",
+            "We are not responsible for any loss of data, revenue, or damage resulting from the use or inability to use our platform.",
+            "Users are solely responsible for their activities, content, and interactions on the platform."
         ],
     },
     {
         title: "Governing Law",
         content: [
-            "These terms are governed by the laws applicable to the DevForage platform. Any disputes will be resolved under the jurisdiction of the relevant courts.",
+            "These Terms and Conditions are governed by the laws applicable in the jurisdiction where DevForage operates.",
+            "Any disputes arising from these terms will be handled under the exclusive jurisdiction of the relevant courts."
         ],
     },
 ];
