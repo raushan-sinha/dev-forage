@@ -39,10 +39,10 @@ export const footerData = {
             id: 4,
             title: "Legal",
             links: [
+                { name: "Help", href: "/help" },
                 { name: "Privacy Policy", href: "/privacyPolicy" },
                 { name: "Terms", href: "/terms" },
-                { name: "Cookie Policy", href: "/cookie" },
-                { name: "Help", href: "/help" },
+                { name: "Refund Policy", href: "/refund-policy" },
             ],
         },
     ],
