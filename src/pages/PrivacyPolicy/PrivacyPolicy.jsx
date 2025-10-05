@@ -1,4 +1,5 @@
 import React from 'react'
+import Footer from '../../components/Footer/Footer';
 
 export default function PrivacyPolicy() {
     //todo: Month & Year -
@@ -7,7 +8,7 @@ export default function PrivacyPolicy() {
 
     return (
         <>
-            <div className="bg-gray-50 dark:bg-gray-900 text-gray-800 dark:text-gray-100 min-h-screen py-12 px-6 md:px-16">
+            <div className="bg-gray-50 dark:bg-gray-900 text-gray-800 dark:text-gray-100 min-h-screen py-12 px-6 md:px-16 mt-10">
                 <div className="max-w-5xl mx-auto bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-8 md:p-12">
                     <h1 className="text-3xl md:text-4xl font-bold text-center text-blue-700 dark:text-blue-400 mb-8">
                         Privacy Policy – DevForage
@@ -123,6 +124,8 @@ export default function PrivacyPolicy() {
                     </section>
                 </div>
             </div>
+
+            <Footer />
         </>
     );
 }
