@@ -4,7 +4,7 @@ import Footer from '../../components/Footer/Footer';
 export default function PrivacyPolicy() {
     //todo: Month & Year -
     const date = new Date();
-    const monthName = date.toLocaleString('en-US', { day: 'numeric', month: 'long', year: 'numeric' });
+    const monthName = date.toLocaleString('en-US', { month: 'long', year: 'numeric' });
 
     return (
         <>
