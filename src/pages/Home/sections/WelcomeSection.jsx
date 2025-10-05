@@ -26,29 +26,29 @@ export default function WelcomeSection() {
                     become a better developer.
                 </p>
 
-                <div className="flex flex-col items-center gap-4 sm:flex-row sm:gap-10">
+                <div className="flex flex-col items-center gap-4 sm:flex-row sm:justify-center sm:gap-6 lg:gap-8 w-full max-w-5xl">
                     {/* Call to Action */}
                     <Link
                         to="/login"
-                        className="inline-block bg-indigo-500 hover:bg-indigo-600 text-black text-base sm:text-lg font-semibold px-6 sm:px-8 py-3 rounded-xl shadow-lg transition-transform transform hover:scale-105 whitespace-nowrap"
+                        className="w-full max-w-xs sm:w-auto inline-block bg-indigo-500 hover:bg-indigo-600 text-white text-sm sm:text-base lg:text-lg font-semibold px-5 sm:px-6 lg:px-8 py-3 rounded-xl shadow-lg transition-transform transform hover:scale-105 text-center whitespace-nowrap"
                     >
-                        Start Building with DevForage
+                        Get Started
                     </Link>
 
                     {/* Create React Components */}
                     <Link
                         to="/react-components"
-                        className="inline-block bg-cyan-600 hover:bg-cyan-700 text-black text-base sm:text-lg font-semibold px-6 sm:px-8 py-3 rounded-xl shadow-lg transition-transform transform hover:scale-105 whitespace-nowrap"
+                        className="w-full max-w-xs sm:w-auto inline-block bg-cyan-600 hover:bg-cyan-700 text-white text-sm sm:text-base lg:text-lg font-semibold px-5 sm:px-6 lg:px-8 py-3 rounded-xl shadow-lg transition-transform transform hover:scale-105 text-center whitespace-nowrap"
                     >
-                        Create own React Components
+                        Build Components
                     </Link>
 
                     {/* Chat Community */}
                     <Link
                         to="/chat-developers"
-                        className="inline-block bg-amber-500 hover:bg-amber-600 text-black text-base sm:text-lg font-semibold px-6 sm:px-8 py-3 rounded-xl shadow-lg transition-transform transform hover:scale-105 whitespace-nowrap"
+                        className="w-full max-w-xs sm:w-auto inline-block bg-amber-500 hover:bg-amber-600 text-white text-sm sm:text-base lg:text-lg font-semibold px-5 sm:px-6 lg:px-8 py-3 rounded-xl shadow-lg transition-transform transform hover:scale-105 text-center whitespace-nowrap"
                     >
-                        Start Chatting with Developers
+                        Join Community
                     </Link>
                 </div>
             </div>
