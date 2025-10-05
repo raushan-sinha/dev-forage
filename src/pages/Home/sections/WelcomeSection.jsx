@@ -30,7 +30,7 @@ export default function WelcomeSection() {
                     {/* Call to Action */}
                     <Link
                         to="/login"
-                        className="inline-block bg-indigo-500 hover:bg-indigo-600 text-white text-base sm:text-lg font-semibold px-6 sm:px-8 py-3 rounded-xl shadow-lg transition-transform transform hover:scale-105 whitespace-nowrap"
+                        className="inline-block bg-indigo-500 hover:bg-indigo-600 text-black text-base sm:text-lg font-semibold px-6 sm:px-8 py-3 rounded-xl shadow-lg transition-transform transform hover:scale-105 whitespace-nowrap"
                     >
                         Start Building with DevForage
                     </Link>
@@ -38,7 +38,7 @@ export default function WelcomeSection() {
                     {/* Create React Components */}
                     <Link
                         to="/react-components"
-                        className="inline-block bg-cyan-600 hover:bg-cyan-700 text-white text-base sm:text-lg font-semibold px-6 sm:px-8 py-3 rounded-xl shadow-lg transition-transform transform hover:scale-105 whitespace-nowrap"
+                        className="inline-block bg-cyan-600 hover:bg-cyan-700 text-black text-base sm:text-lg font-semibold px-6 sm:px-8 py-3 rounded-xl shadow-lg transition-transform transform hover:scale-105 whitespace-nowrap"
                     >
                         Create own React Components
                     </Link>
@@ -46,7 +46,7 @@ export default function WelcomeSection() {
                     {/* Chat Community */}
                     <Link
                         to="/chat-developers"
-                        className="inline-block bg-amber-500 hover:bg-amber-600 text-white text-base sm:text-lg font-semibold px-6 sm:px-8 py-3 rounded-xl shadow-lg transition-transform transform hover:scale-105 whitespace-nowrap"
+                        className="inline-block bg-amber-500 hover:bg-amber-600 text-black text-base sm:text-lg font-semibold px-6 sm:px-8 py-3 rounded-xl shadow-lg transition-transform transform hover:scale-105 whitespace-nowrap"
                     >
                         Start Chatting with Developers
                     </Link>
