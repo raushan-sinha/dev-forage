@@ -26,13 +26,31 @@ export default function WelcomeSection() {
                     become a better developer.
                 </p>
 
-                {/* Call to Action */}
-                <Link
-                    to="/login"
-                    className="inline-block bg-indigo-500 hover:bg-indigo-600 text-white text-base sm:text-lg font-semibold px-6 sm:px-8 py-3 rounded-xl shadow-lg transition-transform transform hover:scale-105"
-                >
-                    Start Building with DevForage
-                </Link>
+                <div className="flex flex-col items-center gap-4 sm:flex-row sm:gap-10">
+                    {/* Call to Action */}
+                    <Link
+                        to="/login"
+                        className="inline-block bg-indigo-500 hover:bg-indigo-600 text-white text-base sm:text-lg font-semibold px-6 sm:px-8 py-3 rounded-xl shadow-lg transition-transform transform hover:scale-105 whitespace-nowrap"
+                    >
+                        Start Building with DevForage
+                    </Link>
+
+                    {/* Create React Components */}
+                    <Link
+                        to="/react-components"
+                        className="inline-block bg-cyan-600 hover:bg-cyan-700 text-white text-base sm:text-lg font-semibold px-6 sm:px-8 py-3 rounded-xl shadow-lg transition-transform transform hover:scale-105 whitespace-nowrap"
+                    >
+                        Create own React Components
+                    </Link>
+
+                    {/* Chat Community */}
+                    <Link
+                        to="/chat-developers"
+                        className="inline-block bg-amber-500 hover:bg-amber-600 text-white text-base sm:text-lg font-semibold px-6 sm:px-8 py-3 rounded-xl shadow-lg transition-transform transform hover:scale-105 whitespace-nowrap"
+                    >
+                        Start Chatting with Developers
+                    </Link>
+                </div>
             </div>
 
             {/* Background overlay */}
