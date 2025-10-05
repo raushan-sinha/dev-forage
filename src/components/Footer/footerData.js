@@ -10,9 +10,10 @@ export const footerData = {
             title: "Quick Links",
             links: [
                 { name: "Home", href: "/" },
-                { name: "Courses", href: "/courses" },
-                { name: "Roadmaps", href: "/roadmaps" },
-                { name: "Support", href: "/support" },
+                { name: "DevStores", href: "/devStores" },
+                { name: "Components", href: "/components" },
+                { name: "DevChat", href: "/devChat" },
+                { name: "Pricing", href: "/pricing" },
             ],
         },
         {

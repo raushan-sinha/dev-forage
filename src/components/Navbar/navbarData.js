@@ -3,7 +3,8 @@ export const navbarData = {
     navLinks: [
         { id: 1, name: "Home", href: "/" },
         { id: 2, name: "DevStores", href: "/devStores" },
-        { id: 3, name: "OpenForage", href: "/openForage" },
-        { id: 4, name: "Support", href: "/support" },
+        { id: 3, name: "Components", href: "/components" },
+        { id: 3, name: "DevChat", href: "/devChat" },
+        { id: 4, name: "Pricing", href: "/pricing" },
     ]
 }
