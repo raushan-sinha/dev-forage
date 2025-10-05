@@ -19,20 +19,20 @@ export default function Footer() {
             {/* Main Footer Layout */}
             <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between gap-12 md:gap-8">
                 {/* Brand */}
-                <div className="md:w-1/4">
+                {/* <div className="md:w-1/4">
                     <h2 className="text-3xl font-bold text-white tracking-wide cursor-pointer mb-3 logo-text">
                         {footerData.brand.name}
                     </h2>
                     <p className="text-base leading-relaxed">
                         {footerData.brand.description}
                     </p>
-                </div>
+                </div> */}
 
                 {/* Sections */}
-                <div className="flex flex-1 flex-wrap gap-12 justify-between">
+                <div className="flex flex-1 flex-wrap gap-11 justify-between">
                     {footerData.sections.map((section) => (
                         <div key={section.id}>
-                            <h3 className="text-lg font-semibold text-white mb-3">
+                            <h3 className="text-lg font-semibold text-white mb-3 underline underline-offset-5 decoration-2">
                                 {section.title}
                             </h3>
                             <ul className="space-y-2">
@@ -52,7 +52,7 @@ export default function Footer() {
 
                     {/* Social Links */}
                     <div>
-                        <h3 className="text-lg font-semibold text-white mb-3">
+                        <h3 className="text-lg font-semibold text-white mb-3 underline underline-offset-5 decoration-2">
                             Follow Us
                         </h3>
                         <div className="flex space-x-4 text-2xl">
