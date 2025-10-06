@@ -140,12 +140,12 @@ export default function Login() {
                             <div className="mt-4 text-center text-sm text-gray-500">
                                 <p>
                                     By signing in, you agree to our {''}
-                                    <a href="#" className="text-blue-400 transition hover:underline"
-                                    >Terms</a
+                                    <Link to="/terms" className="text-blue-400 transition hover:underline"
+                                    >Terms</Link
                                     >
                                     {''} and {''}
-                                    <a href="#" className="text-blue-400 transition hover:underline"
-                                    >Privacy Policy</a
+                                    <Link to="/privacyPolicy" className="text-blue-400 transition hover:underline"
+                                    >Privacy Policy</Link
                                     >.
                                 </p>
                             </div>
