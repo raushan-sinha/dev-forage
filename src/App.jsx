@@ -9,6 +9,7 @@ import Community from './pages/Community/Community';
 import Blog from './pages/Blog/Blog';
 import Terms from './pages/Terms/Terms';
 import PrivacyPolicy from './pages/PrivacyPolicy/PrivacyPolicy';
+import Help from './pages/Help/Help';
 
 export default function App() {
     return (
@@ -27,6 +28,7 @@ export default function App() {
                     <Route path='/blog' element={<Blog />} />
                     <Route path='/terms' element={<Terms />} />
                     <Route path='/privacyPolicy' element={<PrivacyPolicy />} />
+                    <Route path='/help' element={<Help />} />
                 </Routes>
             </BrowserRouter>
         </>
