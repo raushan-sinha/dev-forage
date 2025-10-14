@@ -38,7 +38,7 @@ export default function WelcomeSection() {
                     {/* Create React Components */}
                     <Link
                         to="/react-components"
-                        className="w-48 inline-block bg-cyan-600 hover:bg-cyan-700 text-white text-sm sm:text-base lg:text-lg font-semibold px-4 py-3 rounded-xl shadow-lg transition-transform transform hover:scale-105 text-center whitespace-nowrap"
+                        className="w-48 inline-block bg-[#cc0c39] hover:bg-red-500 text-white text-sm sm:text-base lg:text-lg font-semibold px-4 py-3 rounded-xl shadow-lg transition-transform transform hover:scale-105 text-center whitespace-nowrap"
                     >
                         Build Components
                     </Link>
@@ -46,7 +46,7 @@ export default function WelcomeSection() {
                     {/* Chat Community */}
                     <Link
                         to="/chat-developers"
-                        className="w-48 inline-block bg-amber-500 hover:bg-amber-600 text-white text-sm sm:text-base lg:text-lg font-semibold px-4 py-3 rounded-xl shadow-lg transition-transform transform hover:scale-105 text-center whitespace-nowrap"
+                        className="w-48 inline-block bg-emerald-600 hover:bg-emerald-700 text-white text-sm sm:text-base lg:text-lg font-semibold px-4 py-3 rounded-xl shadow-lg transition-transform transform hover:scale-105 text-center whitespace-nowrap"
                     >
                         Join Community
                     </Link>
