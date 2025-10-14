@@ -17,7 +17,7 @@ export default function Help() {
                 {/* Name & Email */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
-                        <label className="block mb-2 text-sm font-semibold">Full Name</label>
+                        <label className="block mb-2 text-sm font-semibold" htmlFor='name'>Full Name</label>
                         <input
                             type="text"
                             id='name'
@@ -27,10 +27,10 @@ export default function Help() {
                         />
                     </div>
                     <div>
-                        <label className="block mb-2 text-sm font-semibold">Email Address</label>
+                        <label className="block mb-2 text-sm font-semibold" htmlFor='email'>Email Address</label>
                         <input
                             type="email"
-                            autoCapitalize='email'
+                            autoComplete='email'
                             id='email'
                             name='email'
                             placeholder="Enter your email"
@@ -42,8 +42,8 @@ export default function Help() {
                 {/* Role & User ID */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
-                        <label className="block mb-2 text-sm font-semibold">User Role</label>
-                        <select className="w-full px-4 py-2 rounded-lg bg-[#0f172a] text-white focus:ring-2 focus:ring-sky-400 outline-none">
+                        <label className="block mb-2 text-sm font-semibold" htmlFor='role'>User Role</label>
+                        <select className="w-full px-4 py-2 rounded-lg bg-[#0f172a] text-white focus:ring-2 focus:ring-sky-400 outline-none" id='role' autoComplete='role'>
                             <option>Select Role</option>
                             <option>Student</option>
                             <option>Instructor</option>
@@ -51,9 +51,11 @@ export default function Help() {
                         </select>
                     </div>
                     <div>
-                        <label className="block mb-2 text-sm font-semibold">User ID (optional)</label>
+                        <label className="block mb-2 text-sm font-semibold" htmlFor='userId'>User ID (optional)</label>
                         <input
                             type="text"
+                            id='userId'
+                            autoComplete='userId'
                             placeholder="Enter user ID"
                             className="w-full px-4 py-2 rounded-lg bg-[#0f172a] text-white focus:ring-2 focus:ring-sky-400 outline-none"
                         />
@@ -62,8 +64,8 @@ export default function Help() {
 
                 {/* Issue Category */}
                 <div>
-                    <label className="block mb-2 text-sm font-semibold">Issue Category</label>
-                    <select className="w-full px-4 py-2 rounded-lg bg-[#0f172a] text-white focus:ring-2 focus:ring-sky-400 outline-none">
+                    <label className="block mb-2 text-sm font-semibold" htmlFor='category'>Issue Category</label>
+                    <select className="w-full px-4 py-2 rounded-lg bg-[#0f172a] text-white focus:ring-2 focus:ring-sky-400 outline-none" id='category' autoComplete='category'>
                         <option>Select Category</option>
                         <option>Login / Account Access</option>
                         <option>Course Enrollment</option>
@@ -77,9 +79,11 @@ export default function Help() {
 
                 {/* Subject */}
                 <div>
-                    <label className="block mb-2 text-sm font-semibold">Subject</label>
+                    <label className="block mb-2 text-sm font-semibold" htmlFor='subject'>Subject</label>
                     <input
                         type="text"
+                        id='subject'
+                        autoComplete='subject'
                         placeholder="Write a short title for your issue"
                         className="w-full px-4 py-2 rounded-lg bg-[#0f172a] text-white focus:ring-2 focus:ring-sky-400 outline-none"
                     />
@@ -87,9 +91,11 @@ export default function Help() {
 
                 {/* Description */}
                 <div>
-                    <label className="block mb-2 text-sm font-semibold">Describe Your Issue</label>
+                    <label className="block mb-2 text-sm font-semibold" htmlFor='description'>Describe Your Issue</label>
                     <textarea
                         rows="4"
+                        id='description'
+                        autoComplete='description'
                         placeholder="Describe your issue in detail..."
                         className="w-full px-4 py-2 rounded-lg bg-[#0f172a] text-white focus:ring-2 focus:ring-sky-400 outline-none"
                     ></textarea>
@@ -97,9 +103,11 @@ export default function Help() {
 
                 {/* File Upload */}
                 <div>
-                    <label className="block mb-2 text-sm font-semibold">Attach File (optional)</label>
+                    <label className="block mb-2 text-sm font-semibold" htmlFor='attachFile'>Attach File (optional)</label>
                     <input
                         type="file"
+                        id='attachFile'
+                        autoComplete='attachFile'
                         className="w-full text-gray-300 file:mr-3 file:py-2 file:px-4 file:rounded-md file:border-0 file:bg-sky-600 file:text-white hover:file:bg-sky-500"
                     />
                 </div>
@@ -107,8 +115,8 @@ export default function Help() {
                 {/* Priority & Contact Method */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
-                        <label className="block mb-2 text-sm font-semibold">Priority</label>
-                        <select className="w-full px-4 py-2 rounded-lg bg-[#0f172a] text-white focus:ring-2 focus:ring-sky-400 outline-none">
+                        <label className="block mb-2 text-sm font-semibold" htmlFor='priority'>Priority</label>
+                        <select className="w-full px-4 py-2 rounded-lg bg-[#0f172a] text-white focus:ring-2 focus:ring-sky-400 outline-none" id='priority' autoComplete='priority'>
                             <option>Select Priority</option>
                             <option>Low</option>
                             <option>Medium</option>
@@ -116,8 +124,8 @@ export default function Help() {
                         </select>
                     </div>
                     <div>
-                        <label className="block mb-2 text-sm font-semibold">Preferred Response Method</label>
-                        <select className="w-full px-4 py-2 rounded-lg bg-[#0f172a] text-white focus:ring-2 focus:ring-sky-400 outline-none">
+                        <label className="block mb-2 text-sm font-semibold" htmlFor='response'>Preferred Response Method</label>
+                        <select className="w-full px-4 py-2 rounded-lg bg-[#0f172a] text-white focus:ring-2 focus:ring-sky-400 outline-none" id='response' autoComplete='response'>
                             <option>Select Method</option>
                             <option>Email</option>
                             <option>Phone</option>
@@ -130,6 +138,7 @@ export default function Help() {
                 <div className="text-center pt-4">
                     <button
                         type="submit"
+                        id='submit'
                         className="px-8 py-3 bg-sky-600 hover:bg-sky-500 rounded-xl text-white font-semibold shadow-lg transition duration-200"
                     >
                         Submit Request
