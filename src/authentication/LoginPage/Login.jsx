@@ -6,21 +6,9 @@ export default function Login() {
     const [password, setPassword] = useState('');
     const navigate = useNavigate();
 
-    //TODO: Form data storage of the User -
-    useEffect(() => {
-        const savedEmail = localStorage.getItem('email');
-        const savedPassword = localStorage.getItem('password');
-
-        if (savedEmail && savedPassword) {
-            setEmail(savedEmail);
-            setPassword(savedPassword);
-        }
-    }, []);
-
     const handleSubmit = (e) => {
         e.preventDefault();
-        localStorage.setItem('email', email);
-        localStorage.setItem('password', password);
+        localStorage.setItem('user', JSON.stringify({ email, loggedIn: true }))
         navigate('/');
     }
 
