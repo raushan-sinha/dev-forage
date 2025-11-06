@@ -11,7 +11,15 @@ import Terms from './pages/Terms/Terms';
 import PrivacyPolicy from './pages/PrivacyPolicy/PrivacyPolicy';
 import Help from './pages/Help/Help';
 import About from './pages/About/About';
-import Footer from './components/Footer/Footer';
+import Careers from './pages/Careers/Careers';
+import Refund from './pages/RefundPolicy/Refund';
+import Feedback from './pages/Feedback/Feedback';
+import Team from './pages/Team/Team';
+import Docs from './pages/OurDocs/Docs';
+import DevStores from './pages/DevStores/DevStores';
+import Components from './pages/Components/Components';
+import DevChat from './pages/DevChat/DevChat';
+import Pricing from './pages/Pricing/Pricing';
 
 export default function App() {
     return (
@@ -24,7 +32,6 @@ export default function App() {
                     <Route path='/' element={<Home />} />
                     <Route path='/login' element={<Login />} />
                     <Route path='/signup' element={<Signup />} />
-                    {/* Footer Resources Links */}
                     <Route path='/faqs' element={<Faq />} />
                     <Route path='/community' element={<Community />} />
                     <Route path='/blog' element={<Blog />} />
@@ -32,9 +39,16 @@ export default function App() {
                     <Route path='/privacyPolicy' element={<PrivacyPolicy />} />
                     <Route path='/help' element={<Help />} />
                     <Route path='/about' element={<About />} />
+                    <Route path='/careers' element={<Careers />} />
+                    <Route path='/refund-policy' element={<Refund />} />
+                    <Route path='/feedback' element={<Feedback />} />
+                    <Route path='/team' element={<Team />} />
+                    <Route path='/docs' element={<Docs />} />
+                    <Route path='/devStores' element={<DevStores />} />
+                    <Route path='/components' element={<Components />} />
+                    <Route path='/devChat' element={<DevChat />} />
+                    <Route path='/pricing' element={<Pricing />} />
                 </Routes>
-
-                <Footer />
             </BrowserRouter>
         </>
     );

@@ -4,7 +4,7 @@ export default function Help() {
     return (
         <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-[#0f172a] via-[#1e293b] to-[#0f172a] px-4 py-10">
             {/* Header */}
-            <div className="max-w-2xl text-center mt-10">
+            <div className="max-w-2xl text-center mt-10 py-3">
                 <h1 className="text-3xl md:text-4xl font-bold text-white mb-3">Help Desk</h1>
                 <p className="text-gray-300 text-base md:text-lg">
                     Need assistance? Fill out the form below and our support team will get back to you within 24–48 hours.
