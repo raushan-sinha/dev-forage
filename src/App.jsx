@@ -20,6 +20,8 @@ import DevStores from './pages/DevStores/DevStores';
 import Components from './pages/Components/Components';
 import DevChat from './pages/DevChat/DevChat';
 import Pricing from './pages/Pricing/Pricing';
+import BuildComponents from './pages/BuildComponents/BuildComponents';
+import ChatCommunity from './pages/ChatCommunity/ChatCommunity';
 
 export default function App() {
     return (
@@ -48,6 +50,8 @@ export default function App() {
                     <Route path='/components' element={<Components />} />
                     <Route path='/devChat' element={<DevChat />} />
                     <Route path='/pricing' element={<Pricing />} />
+                    <Route path='/build-components' element={<BuildComponents />} />
+                    <Route path='/chat-community' element={<ChatCommunity />} />
                 </Routes>
             </BrowserRouter>
         </>
