@@ -11,6 +11,8 @@ const priorityOpts = ['Select Priority', 'Low', 'Medium', 'High'];
 const responseMethodOpts = ['Select Method', 'Email', 'Phone', 'In-App Notification'];
 
 export default function Help() {
+    const [error, setError] = useState('');
+
     return (
         <>
             <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-[#0f172a] via-[#1e293b] to-[#0f172a] px-4 py-10">
@@ -90,7 +92,7 @@ export default function Help() {
                             rows="4"
                             id='description'
                             autoComplete='description'
-                            placeholder="Describe your issue in detail..."
+                            placeholder='eg. "My Course isn`t loading." or "How to reset password."'
                         />
                     </div>
 

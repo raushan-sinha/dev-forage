@@ -10,6 +10,7 @@ export default function TextareaField({ label, rows, id, ...props }) {
             <textarea
                 rows={rows}
                 id={id}
+                {...props}
                 className={baseClass}
             ></textarea>
         </>
