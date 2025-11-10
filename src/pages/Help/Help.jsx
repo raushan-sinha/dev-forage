@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import Footer from '../../components/Footer/Footer';
 import { InputField, TextareaField, FileUpload, SelectField, SubmitBtn } from '../../components/FormField';
 import Alert from '@mui/material/Alert';
-import { rules } from 'eslint-plugin-react-refresh';
 
 const userRoleOpts = ['Select Role', 'Student', 'Instructor', 'Admin'];
 
@@ -13,12 +12,13 @@ const priorityOpts = ['Select Priority', 'Low', 'Medium', 'High'];
 const responseMethodOpts = ['Select Method', 'Email', 'Phone', 'In-App Notification'];
 
 //todo: Validations check rules -
-const validate = (name, email) => {
+const validate = (fields) => {
+    const { name, email } = fields;
     const rules = [
-        { check: !name.trim() && !email.trim(), message: 'Input fields are required. So, fill up Name & Email.' },
-        { check: !name.trim(), message: 'Name is required' },
-        { check: name.trim().length < 3, message: 'Name character should be at least 3.' },
-        { check: !email.trim(), message: 'Email is required' },
+        { check: !name && !email, message: 'Input fields are required. So, fill up Name & Email.' },
+        { check: !name, message: 'Name is required' },
+        { check: name.length < 3, message: 'Name character should be at least 3.' },
+        { check: !email, message: 'Email is required' },
         { check: !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email), message: 'Email is invalid!' },
     ];
 
@@ -34,7 +34,7 @@ export default function Help() {
     //todo: Form Validation -
     const handleSubmit = (event) => {
         event.preventDefault();
-        const errorMessage = validate(name, email);
+        const errorMessage = validate({ name, email });
         if (errorMessage) {
             setError(errorMessage);
 
