@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import Footer from '../../components/Footer/Footer';
 import { InputField, TextareaField, FileUpload, SelectField, SubmitBtn } from '../../components/FormField';
+import Alert from '@mui/material/Alert';
+import { rules } from 'eslint-plugin-react-refresh';
 
 const userRoleOpts = ['Select Role', 'Student', 'Instructor', 'Admin'];
 
@@ -10,8 +12,36 @@ const priorityOpts = ['Select Priority', 'Low', 'Medium', 'High'];
 
 const responseMethodOpts = ['Select Method', 'Email', 'Phone', 'In-App Notification'];
 
+//todo: Validations check rules -
+const validate = (name, email) => {
+    const rules = [
+        { check: !name.trim() && !email.trim(), message: 'Input fields are required. So, fill up Name & Email.' },
+        { check: !name.trim(), message: 'Name is required' },
+        { check: name.trim().length < 3, message: 'Name character should be at least 3.' },
+        { check: !email.trim(), message: 'Email is required' },
+        { check: !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email), message: 'Email is invalid!' },
+    ];
+
+    const result = rules.find(rule => rule.check);
+    return result ? result.message : '';
+}
+
 export default function Help() {
+    const [name, setName] = useState('');
     const [error, setError] = useState('');
+    const [email, setEmail] = useState('');
+
+    //todo: Form Validation -
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        const errorMessage = validate(name, email);
+        if (errorMessage) {
+            setError(errorMessage);
+
+            setTimeout(() => setError(''), 3000);
+            return;
+        }
+    }
 
     return (
         <>
@@ -22,7 +52,12 @@ export default function Help() {
                         Need assistance? Fill out the form below and our support team will get back to you within 24–48 hours.
                     </p>
                 </div>
-                <form className="w-full max-w-2xl bg-[#1e293b]/80 backdrop-blur-lg p-6 md:p-10 rounded-2xl shadow-[0_0px_15px_rgba(56,189,248,0.3)] space-y-5 text-white">
+                <form className="w-full max-w-2xl bg-[#1e293b]/80 backdrop-blur-lg p-6 md:p-10 rounded-2xl shadow-[0_0px_15px_rgba(56,189,248,0.3)] space-y-5 text-white" onSubmit={handleSubmit}>
+                    {error && (
+                        <Alert variant="filled" severity="error">
+                            {error}
+                        </Alert>
+                    )}
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                         <div>
                             <InputField
@@ -32,6 +67,8 @@ export default function Help() {
                                 name='name'
                                 autoComplete='username'
                                 placeholder="Enter your full name"
+                                value={name}
+                                onChange={(e) => setName(e.target.value)}
                             />
                         </div>
                         <div>
@@ -42,6 +79,8 @@ export default function Help() {
                                 name='email'
                                 autoComplete='email'
                                 placeholder="Enter your email"
+                                value={email}
+                                onChange={(e) => setEmail(e.target.value)}
                             />
                         </div>
                     </div>

@@ -10,8 +10,8 @@ export default function InputField({ label, type, id, ...props }) {
             <input
                 type={type}
                 id={id}
-                {...props}
                 className={baseClass}
+                {...props}
             />
         </>
     );
