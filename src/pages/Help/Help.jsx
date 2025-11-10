@@ -53,11 +53,6 @@ export default function Help() {
                     </p>
                 </div>
                 <form className="w-full max-w-2xl bg-[#1e293b]/80 backdrop-blur-lg p-6 md:p-10 rounded-2xl shadow-[0_0px_15px_rgba(56,189,248,0.3)] space-y-5 text-white" onSubmit={handleSubmit}>
-                    {error && (
-                        <Alert variant="filled" severity="error">
-                            {error}
-                        </Alert>
-                    )}
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                         <div>
                             <InputField
@@ -171,6 +166,11 @@ export default function Help() {
                             btnName='Submit Request'
                         />
                     </div>
+                    {error && (
+                        <Alert variant="filled" severity="error">
+                            {error}
+                        </Alert>
+                    )}
                 </form>
             </div>
 
