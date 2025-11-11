@@ -1,6 +1,3 @@
-// DevForageTerms.jsx
-import React from "react";
-import Footer from "../../components/Footer/Footer";
 
 const termsData = [
     {
@@ -103,38 +100,34 @@ const termsData = [
 
 export default function Terms() {
     return (
-        <>
-            <div className="bg-gradient-to-br from-gray-900 via-gray-800 to-black min-h-screen p-6 md:p-12 mt-10">
-                <div className="max-w-5xl mx-auto">
-                    <h1 className="text-3xl md:text-4xl font-bold text-blue-800 dark:text-blue-300 mb-8 text-center">
-                        DevForage Contest Terms & Conditions
-                    </h1>
+        <div className="bg-gradient-to-br from-gray-900 via-gray-800 to-black min-h-screen p-6 md:p-12 mt-10">
+            <div className="max-w-5xl mx-auto">
+                <h1 className="text-3xl md:text-4xl font-bold text-blue-800 dark:text-blue-300 mb-8 text-center">
+                    DevForage Contest Terms & Conditions
+                </h1>
 
-                    <p className="text-md md:text-lg text-gray-700 dark:text-gray-300 mb-8 text-center">
-                        Welcome to DevForage! Before participating in any contests hosted on our platform, please read these terms and conditions carefully. By entering a contest, you agree to abide by these rules.
-                    </p>
+                <p className="text-md md:text-lg text-gray-700 dark:text-gray-300 mb-8 text-center">
+                    Welcome to DevForage! Before participating in any contests hosted on our platform, please read these terms and conditions carefully. By entering a contest, you agree to abide by these rules.
+                </p>
 
-                    <div className="grid gap-6 md:gap-8">
-                        {termsData.map((item, idx) => (
-                            <div
-                                key={idx}
-                                className="bg-[#101923] p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300"
-                            >
-                                <h2 className="text-xl md:text-2xl font-semibold text-blue-700 dark:text-blue-300 mb-4">
-                                    {idx + 1}. {item.title}
-                                </h2>
-                                <ul className="list-disc pl-6 space-y-2 text-gray-700 dark:text-gray-200">
-                                    {item.content.map((line, index) => (
-                                        <li key={index}>{line}</li>
-                                    ))}
-                                </ul>
-                            </div>
-                        ))}
-                    </div>
+                <div className="grid gap-6 md:gap-8">
+                    {termsData.map((item, idx) => (
+                        <div
+                            key={idx}
+                            className="bg-[#101923] p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300"
+                        >
+                            <h2 className="text-xl md:text-2xl font-semibold text-blue-700 dark:text-blue-300 mb-4">
+                                {idx + 1}. {item.title}
+                            </h2>
+                            <ul className="list-disc pl-6 space-y-2 text-gray-700 dark:text-gray-200">
+                                {item.content.map((line, index) => (
+                                    <li key={index}>{line}</li>
+                                ))}
+                            </ul>
+                        </div>
+                    ))}
                 </div>
             </div>
-
-            <Footer />
-        </>
+        </div>
     );
 };

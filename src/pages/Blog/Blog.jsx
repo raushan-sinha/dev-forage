@@ -1,5 +1,4 @@
 import React from 'react';
-import Footer from '../../components/Footer/Footer';
 
 export default function Blog() {
     return (
@@ -9,7 +8,6 @@ export default function Blog() {
                     Blogs are Coming Soon...
                 </h1>
             </div>
-            <Footer />
         </>
     );
 }

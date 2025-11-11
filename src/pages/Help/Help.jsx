@@ -1,5 +1,4 @@
-import React, { useState } from 'react'
-import Footer from '../../components/Footer/Footer';
+import { useState } from 'react'
 import { InputField, TextareaField, FileUpload, SelectField, SubmitBtn } from '../../components/FormField';
 import Alert from '@mui/material/Alert';
 
@@ -30,6 +29,10 @@ export default function Help() {
     const [name, setName] = useState('');
     const [error, setError] = useState('');
     const [email, setEmail] = useState('');
+    // const initialState = {
+    //     name: '',
+    //     email: '',
+    // }
 
     //todo: Form Validation -
     const handleSubmit = (event) => {
@@ -44,7 +47,6 @@ export default function Help() {
     }
 
     return (
-        <>
             <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-[#0f172a] via-[#1e293b] to-[#0f172a] px-4 py-10">
                 <div className="max-w-2xl text-center mt-10 py-3">
                     <h1 className="text-3xl md:text-4xl font-bold text-white mb-3">Help Desk</h1>
@@ -173,8 +175,5 @@ export default function Help() {
                     )}
                 </form>
             </div>
-
-            <Footer />
-        </>
     );
 }

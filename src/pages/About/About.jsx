@@ -5,7 +5,6 @@ import FeaturesSection from './sections/FeaturesSection'
 import TeamSection from './sections/TeamSection';
 import CommunitySection from './sections/CommunitySection';
 import FutureVisionSection from './sections/FutureVisionSection';
-import Footer from '../../components/Footer/Footer';
 
 export default function About() {
     return (
@@ -16,7 +15,6 @@ export default function About() {
             <TeamSection />
             <CommunitySection />
             <FutureVisionSection />
-            <Footer />
         </>
     );
 }
