@@ -30,8 +30,6 @@ export default function App() {
 
     const hideFooter = hideFooterPaths.includes(location.pathname);
 
-    console.log("Current Path:", location.pathname);
-
     return (
         <>
             <Navbar />

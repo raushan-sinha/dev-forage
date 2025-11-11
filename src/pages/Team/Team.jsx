@@ -31,46 +31,42 @@ export default function Team() {
     }
 
     return (
-        <>
-            <div className="min-h-screen bg-[#101923] text-white p-6 flex flex-col items-center">
-                <h1 className="font-bold text-3xl mb-6">
-                    Our Team
-                </h1>
+        <div className="min-h-screen bg-[#101923] text-white p-6 flex flex-col items-center">
+            <h1 className="font-bold text-3xl mb-6">
+                Our Team
+            </h1>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-                    {teams.map((member) => (
-                        <div className="team-card bg-[#1a2430] rounded-lg p-4 flex flex-col items-center text-center shadow-lg" key={member._id ?? member.id}>
-                            <img src={member.profilePic} alt={member.name} className="w-24 h-24 rounded-full object-cover mb-3 border border-gray-600" />
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+                {teams.map((member) => (
+                    <div className="team-card bg-[#1a2430] rounded-lg p-4 flex flex-col items-center text-center shadow-lg" key={member._id ?? member.id}>
+                        <img src={member.profilePic} alt={member.name} className="w-24 h-24 rounded-full object-cover mb-3 border border-gray-600" />
 
-                            <div className="info">
-                                <h3 className="font-semibold text-lg">
-                                    {member.name}
-                                </h3>
+                        <div className="info">
+                            <h3 className="font-semibold text-lg">
+                                {member.name}
+                            </h3>
 
-                                <p className="text-gray-400 text-sm">
-                                    {member.emailId}
-                                </p>
+                            <p className="text-gray-400 text-sm">
+                                {member.emailId}
+                            </p>
 
-                                <div className="social-icons mt-3 flex gap-4 justify-center">
-                                    {member.githubUrl &&
-                                        <a href={member.githubUrl} target="_blank" rel="noreferrer">
-                                            <GithubIcon />
-                                        </a>
-                                    }
+                            <div className="social-icons mt-3 flex gap-4 justify-center">
+                                {member.githubUrl &&
+                                    <a href={member.githubUrl} target="_blank" rel="noreferrer">
+                                        <GithubIcon />
+                                    </a>
+                                }
 
-                                    {member.xUrl &&
-                                        <a href={member.xUrl} target="_blank" rel="noreferrer">
-                                            <XIcon />
-                                        </a>
-                                    }
-                                </div>
+                                {member.xUrl &&
+                                    <a href={member.xUrl} target="_blank" rel="noreferrer">
+                                        <XIcon />
+                                    </a>
+                                }
                             </div>
                         </div>
-                    ))}
-                </div>
+                    </div>
+                ))}
             </div>
-
-            <Footer />
-        </>
+        </div>
     );
 }
