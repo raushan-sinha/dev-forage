@@ -10,11 +10,10 @@ export default function Feedback() {
 
                 <div className="flex justify-center w-full">
                     <textarea
-                        className="w-full sm:w-[90%] md:w-[75%] lg:w-[60%] xl:w-[50%] max-w-3xl h-36 sm:h-44 md:h-52 lg:h-56 bg-slate-900/60 text-white placeholder:text-slate-400 border border-cyan-500/60 rounded-2xl p-4 sm:p-5 resize-none outline-none duration-300 focus:ring-2 focus:ring-cyan-500 focus:border-cyan-500 hover:bg-slate-900/80 shadow-lg"
+                        className="w-full sm:w-[90%] md:w-[75%] lg:w-[60%] xl:w-[50%] max-w-3xl h-36 sm:h-44 md:h-52 lg:h-56 text-white placeholder:text-slate-200 border border-purple-400/60 rounded-2xl p-4 sm:p-5 resize-none outline-none duration-300 focus:ring-2 focus:ring-purple-400 focus:border-purple-400 shadow-xl bg-gradient-to-br from-[#312e81] via-[#3b0764] to-[#0f766e] animate-luxury-gradient"
                         placeholder="Write your feedback here..."
-                        defaultValue=""
-                        id='feedback-textarea'
-                        name='feedback'
+                        id="feedback-textarea"
+                        name="feedback"
                     />
                 </div>
 
