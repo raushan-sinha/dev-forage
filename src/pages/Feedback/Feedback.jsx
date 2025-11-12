@@ -4,13 +4,13 @@ export default function Feedback() {
     return (
         <>
             <div className="min-h-screen flex flex-col items-center justify-center gap-8 bg-gradient-to-br from-[#0f172a] via-[#1e293b] to-[#0f172a] px-4 sm:px-6 md:px-10 py-12 sm:py-16 lg:py-20">
-                <h1 className="text-center text-cyan-600 bg-clip-text text-2xl font-bold col-span-6 mb-1">
+                <h1 className="text-center text-cyan-500 bg-clip-text text-3xl font-bold col-span-6 mb-1">
                     Send Feedback
                 </h1>
 
                 <div className="flex justify-center w-full">
                     <textarea
-                        className="w-full sm:w-[90%] md:w-[75%] lg:w-[60%] xl:w-[50%] max-w-3xl h-36 sm:h-44 md:h-52 lg:h-56 text-white placeholder:text-slate-200 border border-purple-400/60 rounded-2xl p-4 sm:p-5 resize-none outline-none duration-300 focus:ring-2 focus:ring-purple-400 focus:border-purple-400 shadow-xl bg-gradient-to-br from-[#312e81] via-[#3b0764] to-[#0f766e] animate-luxury-gradient"
+                        className="w-full sm:w-[90%] md:w-[75%] lg:w-[60%] xl:w-[50%] max-w-3xl h-36 sm:h-44 md:h-52 lg:h-56 text-white placeholder:text-slate-200 border border-purple-400/60 rounded-2xl p-4 sm:p-5 resize-none outline-none duration-300 focus:ring-2 focus:ring-purple-400 focus:border-purple-400 shadow-xl bg-gradient-to-br from-[#312e81] via-[#3b0764] to-[#0f766e] animate-luxury-gradient font-mono"
                         placeholder="Write your feedback here..."
                         id="feedback-textarea"
                         name="feedback"
