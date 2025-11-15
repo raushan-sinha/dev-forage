@@ -22,7 +22,7 @@ export default function Feedback() {
     const [wordCount, setWordCount] = useState(0);
     const [countAlert, setCountAlert] = useState(false);
 
-    const WORD_LIMIT = 2;
+    const WORD_LIMIT = 50;
     const handleChange = (e) => {
         const { name, value } = e.target;
 
@@ -73,15 +73,15 @@ export default function Feedback() {
     }
 
     return (
-        <div className="min-h-screen bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50 py-8 px-4 mt-10 sm:px-6 lg:px-8">
+        <div className="min-h-screen bg-gradient-to-br from-[#0f172a] via-[#1e293b] to-[#0f172a] py-8 px-4 mt-10 sm:px-6 lg:px-8">
             {isSubmitted ? (
                 <FeedbackSuccess />
             ) : (
                 <div className="max-w-2xl mx-auto">
                     {/* Header */}
                     <div className="text-center mb-8">
-                        <h1 className="text-4xl font-bold text-gray-800 mb-2">Send Feedback</h1>
-                        <p className="text-gray-600">We'd love to hear your thoughts and suggestions</p>
+                        <h1 className="text-4xl font-bold text-cyan-500 mb-2">Send Feedback</h1>
+                        <p className="text-white">We'd love to hear your thoughts and suggestions</p>
                     </div>
 
                     {/* Feedback Form */}
@@ -190,7 +190,7 @@ export default function Feedback() {
                     </div>
 
                     {/* Footer Note */}
-                    <p className="text-center text-sm text-gray-600 mt-6">
+                    <p className="text-center text-sm text-white mt-6">
                         Your feedback helps us improve our services and better serve you.
                     </p>
                 </div>
