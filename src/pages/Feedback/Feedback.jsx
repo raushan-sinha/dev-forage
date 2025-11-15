@@ -80,7 +80,7 @@ export default function Feedback() {
                 <div className="max-w-2xl mx-auto">
                     {/* Header */}
                     <div className="text-center mb-8">
-                        <h1 className="text-4xl font-bold text-cyan-500 mb-2">Send Feedback</h1>
+                        <h1 className="text-4xl font-bold text-cyan-400 mb-2">Send Feedback</h1>
                         <p className="text-white">We'd love to hear your thoughts and suggestions</p>
                     </div>
 
