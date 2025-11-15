@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { Send as SendIcon, Email as EmailIcon, AccountCircle as AccountCircleIcon, Chat as ChatIcon, } from '@mui/icons-material';
+import { Send as SendIcon, Email as EmailIcon, AccountCircle as AccountCircleIcon, } from '@mui/icons-material';
 import FeedbackSuccess from './FeedbackSuccess';
+import Alert from '@mui/material/Alert';
 
 const options = [
     { value: 'general', label: 'General Feedback' },
@@ -18,9 +19,37 @@ export default function Feedback() {
         message: ''
     });
     const [isSubmitted, setIsSubmitted] = useState(false);
+    const [wordCount, setWordCount] = useState(0);
+    const [countAlert, setCountAlert] = useState(false);
 
+    const WORD_LIMIT = 2;
     const handleChange = (e) => {
         const { name, value } = e.target;
+
+        if (name === 'message') {
+            const words = value.trim().split(/\s+/);
+            if (value.trim() === '') {
+                setFormData(prev => ({
+                    ...prev,
+                    message: ''
+                }));
+                setWordCount(0);
+                return;
+            }
+
+            if (words.length <= WORD_LIMIT) {
+                setFormData(prev => ({
+                    ...prev,
+                    message: value
+                }));
+                setWordCount(words.length);
+            } else {
+                setCountAlert(true);
+                return;
+            }
+            return;
+        }
+
         setFormData(prev => ({
             ...prev,
             [name]: value
@@ -51,9 +80,6 @@ export default function Feedback() {
                 <div className="max-w-2xl mx-auto">
                     {/* Header */}
                     <div className="text-center mb-8">
-                        <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-full mb-4 shadow-lg">
-                            <ChatIcon className="w-8 h-8 text-white" />
-                        </div>
                         <h1 className="text-4xl font-bold text-gray-800 mb-2">Send Feedback</h1>
                         <p className="text-gray-600">We'd love to hear your thoughts and suggestions</p>
                     </div>
@@ -143,8 +169,13 @@ export default function Feedback() {
                                     onChange={handleChange}
                                 ></textarea>
                                 <p className="mt-2 text-sm text-gray-500">
-                                    {formData.message.length} characters
+                                    {wordCount} / {WORD_LIMIT} words
                                 </p>
+                                {countAlert && (
+                                    <Alert variant="filled" severity="error">
+                                        Words limit has been exceeded. Max {WORD_LIMIT} words allowed.
+                                    </Alert>
+                                )}
                             </div>
 
                             {/* Submit Button */}
