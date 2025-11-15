@@ -29,10 +29,6 @@ export default function Help() {
     const [name, setName] = useState('');
     const [error, setError] = useState('');
     const [email, setEmail] = useState('');
-    // const initialState = {
-    //     name: '',
-    //     email: '',
-    // }
 
     //todo: Form Validation -
     const handleSubmit = (event) => {
