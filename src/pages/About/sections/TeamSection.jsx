@@ -3,12 +3,12 @@ import React from "react";
 const team = [
     {
         name: "Raushan Sinha",
-        role: "Founder & Frontend Developer",
-        bio: "Passionate about building interactive UIs and empowering learners to create meaningful projects.",
+        role: "Frontend Developer | Working in DevForage",
+        bio: "Passionate about building interactive UIs and empowering learners to create Frontend projects.",
     },
     {
-        name: "AI Mentors",
-        role: "Intelligent Learning Assistants",
+        name: "Pavithr Jain",
+        role: "MERN Stack Developer | Working in DevForage",
         bio: "Always available to guide developers with real-time learning insights and solutions.",
     },
 ];
