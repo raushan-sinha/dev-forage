@@ -68,7 +68,7 @@ export default function Feedback() {
                     feedbackType: 'general',
                     message: ''
                 })
-            }, 3000);
+            }, 5000);
         }
     }
 
@@ -89,7 +89,7 @@ export default function Feedback() {
                         <form className="space-y-6" onSubmit={handleSubmit}>
                             {/* Name Field */}
                             <div>
-                                <label htmlFor="name" className="block text-sm font-semibold text-gray-700 mb-2">
+                                <label htmlFor="name" className="block text-sm font-bold text-gray-700 mb-2">
                                     Name
                                 </label>
                                 <div className="relative">
@@ -102,7 +102,7 @@ export default function Feedback() {
                                         name="name"
                                         autoComplete='username'
                                         required
-                                        className="block w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition duration-200"
+                                        className="block w-full pl-10 pr-3 py-3 border-2 border-gray-500 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition duration-200 font-semibold"
                                         placeholder="Enter your name"
                                         value={formData.name}
                                         onChange={handleChange}
@@ -112,7 +112,7 @@ export default function Feedback() {
 
                             {/* Email Field */}
                             <div>
-                                <label htmlFor="email" className="block text-sm font-semibold text-gray-700 mb-2">
+                                <label htmlFor="email" className="block text-sm font-bold text-gray-700 mb-2">
                                     Email
                                 </label>
                                 <div className="relative">
@@ -125,7 +125,7 @@ export default function Feedback() {
                                         name="email"
                                         autoComplete='email'
                                         required
-                                        className="block w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition duration-200"
+                                        className="block w-full pl-10 pr-3 py-3 border-2 border-gray-500 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition duration-200 font-semibold"
                                         placeholder="your.email@example.com"
                                         value={formData.email}
                                         onChange={handleChange}
@@ -135,14 +135,14 @@ export default function Feedback() {
 
                             {/* Feedback Type */}
                             <div>
-                                <label htmlFor="feedbackType" className="block text-sm font-semibold text-gray-700 mb-2">
+                                <label htmlFor="feedbackType" className="block text-sm font-bold text-gray-700 mb-2">
                                     Feedback Type
                                 </label>
                                 <select
                                     id="feedbackType"
                                     name="feedbackType"
                                     autoComplete='feedback-type'
-                                    className="block w-full px-3 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition duration-200 bg-white"
+                                    className="block w-full px-3 py-3 border-2 border-gray-500 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition duration-200 bg-white font-semibold"
                                     value={formData.feedbackType}
                                     onChange={handleChange}
                                 >
@@ -154,7 +154,7 @@ export default function Feedback() {
 
                             {/* Feedback Message */}
                             <div>
-                                <label htmlFor="message" className="block text-sm font-semibold text-gray-700 mb-2">
+                                <label htmlFor="message" className="block text-sm font-bold text-gray-700 mb-2">
                                     Feedback Message
                                 </label>
                                 <textarea
@@ -163,12 +163,12 @@ export default function Feedback() {
                                     required
                                     rows="6"
                                     autoComplete='off'
-                                    className="block w-full px-3 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition duration-200 resize-none"
+                                    className="block w-full px-3 py-3 border-2 border-gray-500 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition duration-200 resize-none font-semibold"
                                     placeholder="Share your thoughts with us..."
                                     value={formData.message}
                                     onChange={handleChange}
                                 ></textarea>
-                                <p className="mt-2 text-sm text-gray-500">
+                                <p className="mt-2 text-sm text-gray-500 font-bold">
                                     {wordCount} / {WORD_LIMIT} words
                                 </p>
                                 {countAlert && (
