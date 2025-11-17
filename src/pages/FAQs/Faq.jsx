@@ -11,16 +11,16 @@ export default function Faq() {
     };
 
     return (
-        <div className="bg-gradient-to-br from-bg-[#e7f5fd]-900 text-white py-16 px-4 sm:px-6 md:px-12 lg:px-20">
+        <div className="bg-gradient-to-br from-[#0f172a] via-[#1e293b] to-[#0f172a] text-white py-16 px-4 sm:px-6 md:px-12 lg:px-20">
             <div className="w-full max-w-5xl mx-auto px-2 sm:px-4 md:px-6 p-8">
-                <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-black text-center mb-10">
+                <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-cyan-400 text-center mb-10">
                     Frequently Asked Questions
                 </h2>
                 <div className="space-y-4">
                     {faqData.map((faq, index) => (
                         <div
                             key={index}
-                            className="bg-gray-800 rounded-xl shadow-lg p-4 sm:p-5 md:p-6 cursor-pointer transition duration-300 hover:bg-gray-700"
+                            className="bg-gradient-to-r from-indigo-600 to-purple-600 rounded-xl shadow-lg p-4 sm:p-5 md:p-6 cursor-pointer transition duration-300 hover:bg-gray-700"
                             onClick={() => toggleFAQ(index)}
                         >
                             <div className="flex justify-between items-center">
