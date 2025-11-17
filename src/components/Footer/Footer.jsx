@@ -18,16 +18,6 @@ export default function Footer() {
         <footer className="bg-gray-900 text-gray-300 py-12 px-6 md:px-20 border-t border-blue-700">
             {/* Main Footer Layout */}
             <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between gap-12 md:gap-8">
-                {/* Brand */}
-                {/* <div className="md:w-1/4">
-                    <h2 className="text-3xl font-bold text-white tracking-wide cursor-pointer mb-3 logo-text">
-                        {footerData.brand.name}
-                    </h2>
-                    <p className="text-base leading-relaxed">
-                        {footerData.brand.description}
-                    </p>
-                </div> */}
-
                 {/* Sections */}
                 <div className="flex flex-1 flex-wrap gap-11 justify-between">
                     {footerData.sections.map((section) => (
