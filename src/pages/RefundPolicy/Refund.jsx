@@ -77,10 +77,6 @@ export default function Refund() {
                             DevForage reserves the right to update this policy at any time to ensure clarity and fairness. Any changes will be posted on this page with updated revision dates.
                         </p>
                     </section>
-
-                    <p className="text-center text-gray-300 mt-8 text-sm">
-                        Last Updated: {new Date().toLocaleDateString()}
-                    </p>
                 </div>
             </div>
         </div>
