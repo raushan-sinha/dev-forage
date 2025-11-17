@@ -23,6 +23,7 @@ import DevChat from './pages/DevChat/DevChat';
 import Pricing from './pages/Pricing/Pricing';
 import BuildComponents from './pages/BuildComponents/BuildComponents';
 import ChatCommunity from './pages/ChatCommunity/ChatCommunity';
+import ScrollToTop from './components/ScrollToTop';
 
 export default function App() {
     const location = useLocation();
@@ -33,6 +34,7 @@ export default function App() {
     return (
         <>
             <Navbar />
+            <ScrollToTop />
 
             <Routes>
                 <Route path='/' element={<Home />} />
