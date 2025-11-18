@@ -21,6 +21,7 @@ export default function Feedback() {
     const [isSubmitted, setIsSubmitted] = useState(false);
     const [wordCount, setWordCount] = useState(0);
     const [countAlert, setCountAlert] = useState(false);
+    const access_Key = import.meta.env.VITE_FORM_ACCESS_KEY;
 
     const WORD_LIMIT = 50;
     const handleChange = (e) => {
@@ -56,7 +57,7 @@ export default function Feedback() {
         }));
     }
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
         if (formData.name && formData.email && formData.message) {
             setIsSubmitted(true);
@@ -69,6 +70,29 @@ export default function Feedback() {
                     message: ''
                 })
             }, 5000);
+        }
+
+        const form_Data = new FormData();
+        form_Data.append('name', formData.name);
+        form_Data.append('email', formData.email);
+        form_Data.append('feedbackType', formData.feedbackType);
+        form_Data.append('message', formData.message);
+        form_Data.append('access_key', access_Key);
+
+        try {
+            const response = await fetch('https://api.web3forms.com/submit', {
+                method: 'POST',
+                body: form_Data
+            });
+            const result = await response.json();
+            if (result.success) {
+                setFormResult(`Thank you ${formData.name}, your feedback has been sent successfully.`);
+            } else {
+                throw new Error("Form submission failed.");
+            }
+        } catch (error) {
+            setFormResult('Network error. Please try again later.');
+            console.error(error);
         }
     }
 
