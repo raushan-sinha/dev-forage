@@ -16,7 +16,7 @@ export default function Team() {
             socials: [
                 { icon: <GitHub />, link: 'https://github.com/raushan-sinha' },
                 { icon: <LinkedIn />, link: 'https://www.linkedin.com/in/raushan-sinha-4b94452a1/' },
-                { icon: <X />, link: 'https://x.com/' },
+                { icon: <X />, link: 'https://x.com/84Raushan' },
                 { icon: <Email />, link: 'mailto:raushankrsinha2004@gmail.com' },
             ]
         },
