@@ -12,7 +12,7 @@ export default function Team() {
             role: "Co-Founder & CEO",
             tag: "Frontend Developer",
             bio: "With over 1+ years of experience in Frontend development and product strategy, Raushan leads DevForage's vision to revolutionize developer tools. Previously led engineering teams at major tech companies and has a passion for building products that developers love.",
-            image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop",
+            image: "#",
             socials: [
                 { icon: <GitHub />, link: 'https://github.com/raushan-sinha' },
                 { icon: <LinkedIn />, link: 'https://www.linkedin.com/in/raushan-sinha-4b94452a1/' },
@@ -25,7 +25,7 @@ export default function Team() {
             role: "Co-Founder & CTO",
             tag: "MERN Stack Developer",
             bio: "Pavithr brings deep technical expertise in distributed systems and developer infrastructure. He's committed to creating tools that empower developers to build faster and more efficiently. Former principal engineer with a track record of scaling platforms to millions of users.",
-            image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=400&fit=crop",
+            image: "#",
             socials: [
                 { icon: <GitHub />, link: 'https://github.com/raushan-sinha' },
                 { icon: <LinkedIn />, link: 'https://www.linkedin.com/in/raushan-sinha-4b94452a1/' },
