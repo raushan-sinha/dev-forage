@@ -142,7 +142,7 @@ export default function Team() {
                         <p className="text-gray-400 text-lg mb-8 max-w-2xl mx-auto">
                             We're always looking for talented individuals who share our passion for building great developer tools.
                         </p>
-                        <button className="inline-flex items-center px-6 py-3 rounded-lg bg-purple-600 hover:bg-purple-700 text-white font-medium transition-colors duration-200">
+                        <button className="inline-flex items-center px-6 py-3 rounded-lg bg-purple-600 hover:bg-purple-700 text-white font-medium transition-colors duration-200 cursor-pointer">
                             View Open Positions
                         </button>
                     </div>
