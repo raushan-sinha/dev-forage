@@ -1,9 +1,4 @@
 export const footerData = {
-    // brand: {
-    //     name: "DevForage",
-    //     description:
-    //         "Empowering developers with roadmaps, resources and learning paths to master modern technologies.",
-    // },
     sections: [
         {
             id: 1,
@@ -12,7 +7,7 @@ export const footerData = {
                 { name: "Home", href: "/" },
                 { name: "DevStores", href: "/devStores" },
                 { name: "Components", href: "/components" },
-                { name: "DevChat", href: "/devChat" },
+                { name: "Roadmap", href: "/roadmap" },
                 { name: "Pricing", href: "/pricing" },
             ],
         },
