@@ -15,13 +15,14 @@ const HeroSection = () => {
                             Meet the DevForage Team
                         </span>
                     </div>
-                    <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight">
-                        Built by developers,
-                        <br />
-                        <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-purple-400 bg-clip-text text-transparent">
+                    <div className='flex flex-col gap-2 sm:gap-4'>
+                        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight">
+                            Built by developers,
+                        </h1>
+                        <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-purple-400 bg-clip-text text-transparent text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight">
                             for developers
                         </span>
-                    </h1>
+                    </div>
                     <p className="max-w-2xl mx-auto text-lg sm:text-xl text-gray-400">
                         We're a team of passionate builders dedicated to creating the best developer tools and experiences.
                     </p>
