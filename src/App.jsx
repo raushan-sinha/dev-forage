@@ -1,4 +1,4 @@
-import React from 'react'
+import { Toaster } from "react-hot-toast";
 import { Routes, Route, useLocation } from 'react-router-dom';
 import Login from './authentication/LoginPage/Login';
 import Signup from './authentication/SignupPage/Signup';
@@ -61,6 +61,8 @@ export default function App() {
             </Routes>
 
             {!hideFooter && <Footer />}
+
+            <Toaster position="top-right" />
         </>
     );
 }

@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import toast from "react-hot-toast";
+import { signUpUser } from "../../services/authService";
 
 export default function Signup() {
     const [fullName, setFullName] = useState("");
@@ -42,7 +44,7 @@ export default function Signup() {
         });
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
 
         const allErrors = {
@@ -57,10 +59,24 @@ export default function Signup() {
 
         if (hasErrors) return;
 
-        localStorage.setItem("fullName", fullName);
-        localStorage.setItem("email", email);
+        try {
+            const data = await signUpUser({
+                name: fullName,
+                email: email,
+                password: password,
+                confirmPassword: confirmPassword
+            });
 
-        navigate("/");
+            toast.success("Signup successful!");
+
+            localStorage.setItem("fullName", fullName);
+            localStorage.setItem("email", email);
+
+            navigate("/");
+
+        } catch (error) {
+            console.log(error.message);
+        }
     };
 
     return (
