@@ -30,7 +30,7 @@ export default function Login() {
     ];
 
     return (
-        <div className="flex items-center justify-center bg-gray-900 px-4 sm:px-6 lg:px-8 min-h-screen p-8 mt-15">
+        <div className="flex items-center justify-center bg-gray-900 px-4 sm:px-6 lg:px-8 min-h-screen p-8">
             <div className="flex justify-center items-center h-full w-full">
                 <div className="grid gap-8">
                     <section id="back-div" className="bg-gradient-to-r from-blue-500 to-purple-500 rounded-3xl">

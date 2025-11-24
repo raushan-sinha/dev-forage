@@ -80,7 +80,7 @@ export default function Signup() {
     };
 
     return (
-        <div className="flex items-center justify-center bg-[#101923] px-4 p-6 sm:px-6 lg:px-8 min-h-screen mt-12">
+        <div className="flex items-center justify-center bg-[#101923] px-4 p-6 sm:px-6 lg:px-8 min-h-screen">
             <div className="bg-[#e6f5fa] shadow-lg rounded-2xl p-8 w-full max-w-md mt-10">
                 <h2 className="text-2xl font-bold text-center text-gray-900 mb-2">
                     Signup
