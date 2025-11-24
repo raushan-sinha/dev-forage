@@ -27,14 +27,13 @@ import ScrollToTop from './components/ScrollToTop';
 
 export default function App() {
     const location = useLocation();
-    const hideFooterPaths = ['/login', '/signup',];
+    const noLayoutRoutes = ['/login', '/signup'];
 
-    const hideFooter = hideFooterPaths.includes(location.pathname);
+    const hideLayout = noLayoutRoutes.includes(location.pathname);
 
     return (
         <>
-            <Navbar />
-            <ScrollToTop />
+            {!hideLayout && <Navbar />}
 
             <Routes>
                 <Route path='/' element={<Home />} />
@@ -60,7 +59,9 @@ export default function App() {
                 <Route path='/chat-community' element={<ChatCommunity />} />
             </Routes>
 
-            {!hideFooter && <Footer />}
+            {!hideLayout && <Footer />}
+
+            <ScrollToTop />
 
             <Toaster position="top-right" />
         </>
