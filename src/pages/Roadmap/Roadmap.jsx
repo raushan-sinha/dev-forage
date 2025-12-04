@@ -1,0 +1,11 @@
+import React from 'react'
+
+export default function Roadmap() {
+    return (
+        <div className="min-h-screen flex items-center justify-center bg-[#101923]">
+            <h1 className="font-bold logo-text text-white text-2xl">
+                Roadmap are Coming Soon...
+            </h1>
+        </div>
+    );
+}
