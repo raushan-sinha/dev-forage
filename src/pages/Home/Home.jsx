@@ -1,9 +1,5 @@
-import WelcomeSection from './sections/WelcomeSection';
-import OfferSection from './sections/OfferSection';
-import RoadmapSection from './sections/RoadmapSection';
-import DsaSection from './sections/DsaSection';
-import WhySection from './sections/WhySection';
-import FutureSection from './sections/FutureSection';
+import React from 'react';
+import { OfferSection, RoadmapSection, WelcomeSection, DsaSection, WhySection, FutureSection } from './sections';
 
 export default function Home() {
     return (
