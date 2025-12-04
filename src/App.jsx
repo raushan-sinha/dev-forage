@@ -24,6 +24,7 @@ import Pricing from './pages/Pricing/Pricing';
 import BuildComponents from './pages/BuildComponents/BuildComponents';
 import ChatCommunity from './pages/ChatCommunity/ChatCommunity';
 import ScrollToTop from './components/ScrollToTop';
+import Roadmap from "./pages/Roadmap/Roadmap";
 
 export default function App() {
     const location = useLocation();
@@ -52,6 +53,7 @@ export default function App() {
                 <Route path='/team' element={<Team />} />
                 <Route path='/docs' element={<Docs />} />
                 <Route path='/devStores' element={<DevStores />} />
+                <Route path="/roadmap" element={<Roadmap />} />
                 <Route path='/components' element={<Components />} />
                 <Route path='/devChat' element={<DevChat />} />
                 <Route path='/pricing' element={<Pricing />} />
