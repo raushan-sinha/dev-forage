@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 export default function WelcomeSection() {
     return (
-        <section className="relative bg-gradient-to-br from-gray-900 via-gray-800 to-black text-white py-30 px-6 md:px-12 lg:px-24 min-h-screen">
+        <section className="relative bg-gradient-to-br from-gray-900 via-gray-800 to-black text-white py-25 px-6 sm:py-35 md:px-12 lg:px-24 min-h-screen">
             <div className="max-w-5xl mx-auto text-center flex flex-col items-center justify-center">
                 {/* Title */}
                 <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight mb-6">
