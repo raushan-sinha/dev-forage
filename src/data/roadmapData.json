@@ -1,0 +1,41 @@
+[
+    {
+        "title": "Full Stack Developer",
+        "desc": "Master end-to-end engineering across frontend, backend, and deployments.",
+        "gradient": "from-[#06b6d4] via-[#3b82f6] to-[#8b5cf6]",
+        "steps": [
+            "HTML/CSS/JS",
+            "React",
+            "Node.js",
+            "Databases",
+            "Auth + APIs",
+            "Deployments"
+        ]
+    },
+    {
+        "title": "DevOps Engineer",
+        "desc": "Design and automate cloud-native infrastructure with modern tooling.",
+        "gradient": "from-[#22c55e] via-[#16a34a] to-[#0d9488]",
+        "steps": [
+            "Linux",
+            "GitOps",
+            "Docker",
+            "Kubernetes",
+            "AWS/GCP/Azure",
+            "Monitoring"
+        ]
+    },
+    {
+        "title": "AI Engineer",
+        "desc": "Build intelligent systems, train models, and deploy ML pipelines.",
+        "gradient": "from-[#a855f7] via-[#ec4899] to-[#f97316]",
+        "steps": [
+            "Python",
+            "ML Basics",
+            "Deep Learning",
+            "LLMs",
+            "Vector DBs",
+            "MLOps"
+        ]
+    }
+]
