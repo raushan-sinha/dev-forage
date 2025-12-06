@@ -15,8 +15,8 @@ const TeamMember = () => {
     useEffect(() => {
         const loadTeams = async () => {
             try {
-                const data = await getTeams();
-                setTeams(data.data);
+                const teams = await getTeams();
+                setTeams(teams);
             } catch (error) {
                 console.error("Error fetching teams:", error);
             } finally {
