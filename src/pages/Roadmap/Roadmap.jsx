@@ -18,7 +18,7 @@ const Roadmap = () => {
                         </p>
                     </div>
                     <div>
-                        <input type="text" placeholder='Search for anything...' className='border border-2 rounded-xl border-cyan-600 w-90 md:w-100 py-4 p-4 md:py-3 text-base md:text-lg text-white-800 font-mono placeholder-slate-400 bg-transparent outline-none' />
+                        <input type="text" placeholder='Search for anything...' className='border-2 rounded-xl border-cyan-600 w-90 md:w-100 py-4 p-4 md:py-3 text-base md:text-lg text-white-800 font-mono placeholder-slate-400 bg-transparent outline-none' />
                     </div>
                 </header>
 
