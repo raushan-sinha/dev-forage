@@ -8,10 +8,6 @@ const Roadmap = () => {
 
     //todo: logic for auto focusing on search bar when the page load -
     useEffect(() => {
-        alert('Page Reloaded!');
-    }, []);
-
-    useEffect(() => {
         inputRef.current.focus();
     }, []);
 
