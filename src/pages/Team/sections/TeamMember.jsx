@@ -61,9 +61,9 @@ const TeamMember = () => {
                                     {member.name}
                                 </h3>
 
-                                <p className="text-purple-400 font-medium text-sm sm:text-base">
+                                {/* <p className="text-purple-400 font-medium text-sm sm:text-base">
                                     {member.role}
-                                </p>
+                                </p> */}
                             </div>
 
                             <p className="text-gray-400 leading-relaxed mb-8 text-center sm:text-left">

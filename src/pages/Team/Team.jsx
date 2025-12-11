@@ -1,4 +1,4 @@
-import { HeroSection, TeamMember, OpenPosition } from './sections';
+import { HeroSection, TeamMember, } from './sections';
 
 export default function Team() {
     return (
@@ -6,8 +6,6 @@ export default function Team() {
             <HeroSection />
 
             <TeamMember />
-
-            <OpenPosition />
         </div>
     );
 }
