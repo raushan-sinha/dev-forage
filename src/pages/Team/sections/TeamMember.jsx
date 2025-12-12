@@ -60,10 +60,6 @@ const TeamMember = () => {
                                 <h3 className="text-2xl sm:text-3xl font-bold mb-2 bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
                                     {member.name}
                                 </h3>
-
-                                {/* <p className="text-purple-400 font-medium text-sm sm:text-base">
-                                    {member.role}
-                                </p> */}
                             </div>
 
                             <p className="text-gray-400 leading-relaxed mb-8 text-center sm:text-left">
