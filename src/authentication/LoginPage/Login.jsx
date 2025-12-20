@@ -1,6 +1,9 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { loginUser } from "../../services/authService";
+import { googleAuth, googleProvider } from "../../utils/GoogleFirebase";
+// import { githubAuth, githubProvider } from "../../utils/GithubFirebase";
+import { signInWithPopup } from "firebase/auth";
 
 export default function Login() {
     const [email, setEmail] = useState('');
@@ -23,11 +26,85 @@ export default function Login() {
         }
     }
 
-    const socialLinksData = [
-        { id: 1, src: 'https://ucarecdn.com/8f25a2ba-bdcf-4ff1-b596-088f330416ef/', alt: 'Google' },
-        { id: 2, src: 'https://ucarecdn.com/95eebb9c-85cf-4d12-942f-3c40d7044dc6/', alt: 'LinkedIn' },
-        { id: 3, src: 'https://cdn-icons-png.flaticon.com/128/733/733553.png', alt: 'GitHub' },
-    ];
+    // const socialLinksData = [
+    //     { id: 1, src: 'https://ucarecdn.com/8f25a2ba-bdcf-4ff1-b596-088f330416ef/', alt: 'Google' },
+    //     { id: 2, src: 'https://ucarecdn.com/95eebb9c-85cf-4d12-942f-3c40d7044dc6/', alt: 'LinkedIn' },
+    //     { id: 3, src: 'https://cdn-icons-png.flaticon.com/128/733/733553.png', alt: 'GitHub' },
+    // ];
+
+    const handleGoogleLogin = async () => {
+        try {
+            const response = await signInWithPopup(googleAuth, googleProvider);
+            const user = response.user;
+
+            const res = await fetch("http://localhost:5000/api/social-auth/google-login", {
+                method: "POST",
+                credentials: "include",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                    name: user.displayName,
+                    email: user.email,
+                    avatar: user.photoURL,
+                    providerId: user.uid
+                })
+            });
+
+            if (!res.ok) {
+                throw new Error("Google login failed");
+            }
+
+            const data = await res.json();
+
+            localStorage.setItem("user", JSON.stringify(data.user));
+
+            navigate("/");
+        } catch (error) {
+            console.error("Google login error:", error);
+        }
+    };
+
+    const handleLinkedInLogin = async () => {
+        const params = new URLSearchParams({
+            response_type: "code",
+            client_id: import.meta.env.VITE_LINKEDIN_CLIENT_ID,
+            redirect_uri: "http://localhost:5000/api/social-auth/callback",
+            scope: "openid email profile"
+        });
+
+        window.location.href = `https://www.linkedin.com/oauth/v2/authorization?${params}`;
+    };
+
+    // const handleGithubLogin = async () => {
+    //     try {
+    //         const response = await signInWithPopup(githubAuth, githubProvider);
+    //         const user = response.user;
+    //         const res = await fetch("http://localhost:5000/api/social-auth/linkedin-login", {
+    //             method: "POST",
+    //             credentials: "include",
+    //             headers: {
+    //                 "Content-Type": "application/json",
+    //             },
+    //             body: JSON.stringify({
+    //                 name: user.displayName,
+    //                 email: user.email,
+    //                 avatar: user.photoURL,
+    //                 providerId: user.uid
+    //             })
+    //         });
+
+    //         const responseData = await res.json();
+
+    //         if (!responseData.ok) {
+    //             alert(responseData.message);
+    //         }
+
+    //         navigate("/");
+    //     } catch (error) {
+    //         console.log(error);
+    //     }
+    // };
 
     return (
         <div className="flex items-center justify-center bg-gray-900 px-4 sm:px-6 lg:px-8 min-h-screen p-8">
@@ -75,12 +152,47 @@ export default function Login() {
                                 </Link>
                             </div>
 
-                            <div id="third-party-auth" className="flex justify-center gap-4 mt-5">
+                            {/* <div id="third-party-auth" className="flex justify-center gap-4 mt-5">
                                 {socialLinksData.map((item) => (
                                     <button className="p-2 rounded-lg hover:scale-105 transition transform duration-300 shadow-lg cursor-pointer" key={item.id}>
                                         <img className="w-6 h-6" loading="lazy" src={item.src} alt={item.alt} />
                                     </button>
                                 ))}
+                            </div> */}
+
+                            <div id="third-party-auth" className="flex justify-center gap-4 mt-5">
+                                <button
+                                    onClick={handleGoogleLogin}
+                                    className="p-2 rounded-lg hover:scale-105 transition transform duration-300 shadow-lg cursor-pointer"
+                                >
+                                    <img
+                                        className="w-6 h-6"
+                                        src="https://ucarecdn.com/8f25a2ba-bdcf-4ff1-b596-088f330416ef/"
+                                        alt="Google"
+                                    />
+                                </button>
+
+                                <button
+                                    onClick={handleLinkedInLogin}
+                                    className="p-2 rounded-lg hover:scale-105 transition transform duration-300 shadow-lg cursor-pointer"
+                                >
+                                    <img
+                                        className="w-6 h-6"
+                                        src="https://ucarecdn.com/95eebb9c-85cf-4d12-942f-3c40d7044dc6/"
+                                        alt="LinkedIn"
+                                    />
+                                </button>
+
+                                {/* <button
+                                    onClick={handleGithubLogin}
+                                    className="p-2 rounded-lg hover:scale-105 transition transform duration-300 shadow-lg cursor-pointer"
+                                >
+                                    <img
+                                        className="w-6 h-6"
+                                        src="https://cdn-icons-png.flaticon.com/128/733/733553.png"
+                                        alt="Github"
+                                    />
+                                </button> */}
                             </div>
 
                             <div className="mt-4 text-center text-sm text-gray-500">
