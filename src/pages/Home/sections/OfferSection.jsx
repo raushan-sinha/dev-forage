@@ -1,5 +1,11 @@
-// src/components/OfferSection.jsx
 import React from "react";
+import OfferSectionCard from "../../../components/Cards/OfferSectionCard";
+import ProgrammingImages from '../../../assets/programming-img.jpg';
+import FrameworkImages from '../../../assets/frameworks.jpg';
+import AIMLImages from '../../../assets/aiml.jpg';
+import DevOpsImages from '../../../assets/devops.jpg';
+import CyberImages from '../../../assets/cybersecurity.jpg';
+import DSAImages from '../../../assets/das.jpg';
 
 export default function OfferSection() {
     const offerings = {
@@ -8,36 +14,48 @@ export default function OfferSection() {
             "At DevForage, we believe knowledge is best gained when it is well-structured and practical. That's why we offer comprehensive courses, roadmaps, and practice material in the most in-demand areas of technology, including:",
         categories: [
             {
+                image: ProgrammingImages,
+                alt: "Programming languages illustration showing C, C++, Java, Python, and JavaScript",
                 title: "Programming Languages",
                 description:
                     "C, C++, Java, Python, and JavaScript to build your core coding foundation.",
                 icon: "💻",
             },
             {
+                image: FrameworkImages,
+                alt: "Frameworks and libraries illustration including React, Angular, Node.js, and Django",
                 title: "Frameworks & Libraries",
                 description:
                     "React, Angular, Node.js, Django, Bootstrap, TailwindCSS, and many others to make you industry-ready.",
                 icon: "⚛️",
             },
             {
+                image: AIMLImages,
+                alt: "Artificial Intelligence and Machine Learning illustration with data science concepts",
                 title: "AIML & Data Science",
                 description:
                     "Dive deep into Artificial Intelligence, Machine Learning, and Data Science with real-world applications.",
                 icon: "🤖",
             },
             {
+                image: DevOpsImages,
+                alt: "DevOps and cloud computing illustration with Docker, Kubernetes, and CI/CD pipelines",
                 title: "DevOps & Cloud",
                 description:
                     "Master Docker, Kubernetes, CI/CD pipelines, and cloud platforms to scale projects with ease.",
                 icon: "☁️",
             },
             {
+                image: CyberImages,
+                alt: "Cyber security illustration representing ethical hacking and secure systems",
                 title: "Cyber Security",
                 description:
                     "Learn ethical hacking, secure coding, penetration testing, and defense strategies to protect the digital world.",
                 icon: "🔐",
             },
             {
+                image: DSAImages,
+                alt: "Data structures and algorithms illustration for coding interview preparation",
                 title: "DSA (Data Structures & Algorithms)",
                 description:
                     "Strengthen your problem-solving and crack top-level coding interviews.",
@@ -60,20 +78,9 @@ export default function OfferSection() {
                 </div>
 
                 {/* Categories Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div className="mx-auto grid max-w-6xl place-items-center grid-cols-1 gap-15 sm:grid-cols-2 lg:grid-cols-3">
                     {offerings.categories.map((category, index) => (
-                        <div
-                            key={index}
-                            className="bg-[#101923] rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2"
-                        >
-                            <div className="text-4xl mb-4">{category.icon}</div>
-                            <h3 className="text-xl md:text-2xl font-semibold text-cyan-500 mb-4 font-mono">
-                                {category.title}
-                            </h3>
-                            <p className="text-white leading-relaxed font-mono">
-                                {category.description}
-                            </p>
-                        </div>
+                        <OfferSectionCard key={index} cards={[category]} />
                     ))}
                 </div>
             </div>
