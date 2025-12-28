@@ -47,14 +47,14 @@ export default function OfferSection() {
     };
 
     return (
-        <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-[#fcebe0] to-[#e7f5fd]">
+        <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-[#020617] via-[#0F172A] to-[#083344]">
             <div className="max-w-7xl mx-auto">
                 {/* Title & Description */}
                 <div className="text-center mb-16">
-                    <h2 className="text-3xl md:text-5xl font-bold text-gray-800 mb-6">
+                    <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">
                         {offerings.title}
                     </h2>
-                    <p className="text-lg md:text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+                    <p className="text-lg md:text-xl text-gray-400 max-w-4xl mx-auto leading-relaxed">
                         {offerings.description}
                     </p>
                 </div>
@@ -64,13 +64,13 @@ export default function OfferSection() {
                     {offerings.categories.map((category, index) => (
                         <div
                             key={index}
-                            className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2"
+                            className="bg-[#101923] rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2"
                         >
                             <div className="text-4xl mb-4">{category.icon}</div>
-                            <h3 className="text-xl md:text-2xl font-semibold text-gray-800 mb-4">
+                            <h3 className="text-xl md:text-2xl font-semibold text-cyan-500 mb-4 font-mono">
                                 {category.title}
                             </h3>
-                            <p className="text-gray-600 leading-relaxed">
+                            <p className="text-white leading-relaxed font-mono">
                                 {category.description}
                             </p>
                         </div>
