@@ -22,7 +22,7 @@ export default function Navbar() {
 
     return (
         <>
-            <nav className="bg-[#101923] fixed w-full top-0 left-0 z-50 backdrop-blur-md shadow-[0_0px_2px_#38bdf8]">
+            <nav className="fixed top-4 w-[95%] left-1/2 -translate-x-1/2 bg-[#0f172a] text-white z-50 shadow-lg rounded-2xl backdrop-blur-xl border border-white/10">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex justify-between items-center">
                     {/* Logo */}
                     <div
