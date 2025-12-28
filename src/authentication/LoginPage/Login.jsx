@@ -1,14 +1,25 @@
-import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import { loginUser } from "../../services/authService";
-import { googleAuth, googleProvider } from "../../utils/GoogleFirebase";
-// import { githubAuth, githubProvider } from "../../utils/GithubFirebase";
-import { signInWithPopup } from "firebase/auth";
+import { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import { loginUser } from '../../services/authService';
+import { auth, githubProvider, googleProvider } from '../../utils/Firebase';
+import { signInWithPopup, GithubAuthProvider } from 'firebase/auth';
+import { sendUserToBackend } from '../../services/socialAuthService';
 
 export default function Login() {
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
     const navigate = useNavigate();
+
+    const fetchGithubEmail = async (token) => {
+        const res = await fetch("https://api.github.com/user/emails", {
+            headers: {
+                Authorization: `Bearer ${token}`,
+            },
+        });
+
+        const emails = await res.json();
+        return emails.find(e => e.primary)?.email;
+    };
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -16,50 +27,41 @@ export default function Login() {
         try {
             const data = await loginUser({ email, password });
 
-            localStorage.setItem('user', JSON.stringify(data.user));
-            localStorage.setItem('token', data.token);
+            localStorage.setItem("user", JSON.stringify(data.user));
+            localStorage.setItem("token", data.token);
 
-            navigate('/');
+            navigate("/");
         } catch (error) {
             console.error("Login failed:", error);
             alert("Invalid email or password");
         }
-    }
-
-    // const socialLinksData = [
-    //     { id: 1, src: 'https://ucarecdn.com/8f25a2ba-bdcf-4ff1-b596-088f330416ef/', alt: 'Google' },
-    //     { id: 2, src: 'https://ucarecdn.com/95eebb9c-85cf-4d12-942f-3c40d7044dc6/', alt: 'LinkedIn' },
-    //     { id: 3, src: 'https://cdn-icons-png.flaticon.com/128/733/733553.png', alt: 'GitHub' },
-    // ];
+    };
 
     const handleGoogleLogin = async () => {
         try {
-            const response = await signInWithPopup(googleAuth, googleProvider);
-            const user = response.user;
+            const result = await signInWithPopup(auth, googleProvider);
+            const user = result.user;
 
             const res = await fetch("http://localhost:5000/api/social-auth/google-login", {
                 method: "POST",
                 credentials: "include",
                 headers: {
-                    "Content-Type": "application/json",
+                    "Content-Type": "application/json"
                 },
                 body: JSON.stringify({
+                    provider: "google",
+                    providerId: user.uid,
                     name: user.displayName,
                     email: user.email,
-                    avatar: user.photoURL,
-                    providerId: user.uid
+                    avatar: user.photoURL
                 })
             });
 
-            if (!res.ok) {
-                throw new Error("Google login failed");
-            }
-
             const data = await res.json();
 
-            localStorage.setItem("user", JSON.stringify(data.user));
-
             navigate("/");
+
+            return data;
         } catch (error) {
             console.error("Google login error:", error);
         }
@@ -76,35 +78,46 @@ export default function Login() {
         window.location.href = `https://www.linkedin.com/oauth/v2/authorization?${params}`;
     };
 
-    // const handleGithubLogin = async () => {
-    //     try {
-    //         const response = await signInWithPopup(githubAuth, githubProvider);
-    //         const user = response.user;
-    //         const res = await fetch("http://localhost:5000/api/social-auth/linkedin-login", {
-    //             method: "POST",
-    //             credentials: "include",
-    //             headers: {
-    //                 "Content-Type": "application/json",
-    //             },
-    //             body: JSON.stringify({
-    //                 name: user.displayName,
-    //                 email: user.email,
-    //                 avatar: user.photoURL,
-    //                 providerId: user.uid
-    //             })
-    //         });
+    const handleGithubLogin = async () => {
+        try {
+            const result = await signInWithPopup(auth, githubProvider);
 
-    //         const responseData = await res.json();
+            const credential = GithubAuthProvider.credentialFromResult(result);
+            const accessToken = credential.accessToken;
 
-    //         if (!responseData.ok) {
-    //             alert(responseData.message);
-    //         }
+            let email = result.user.email;
 
-    //         navigate("/");
-    //     } catch (error) {
-    //         console.log(error);
-    //     }
-    // };
+            if (!email) {
+                email = await fetchGithubEmail(accessToken);
+            }
+
+            if (!email) {
+                alert("GitHub email not found");
+                return;
+            }
+
+            await sendUserToBackend(
+                {
+                    ...result.user,
+                    email
+                },
+                "github"
+            );
+
+            navigate("/");
+        } catch (error) {
+
+            if (error.code === "auth/account-exists-with-different-credential") {
+                const customData = error.customData;
+                const email = error.customData.email;
+
+                console.error("customData:", customData);
+                console.error("email:", email);
+            } else {
+                console.error("GitHub login error:", error);
+            }
+        }
+    };
 
     return (
         <div className="flex items-center justify-center bg-gray-900 px-4 sm:px-6 lg:px-8 min-h-screen p-8">
@@ -145,20 +158,12 @@ export default function Login() {
                             </form>
 
                             <div className="flex flex-col mt-4 text-sm text-center dark:text-gray-300">
-                                Don't have an account? {''}
+                                Don't have an account? {""}
 
                                 <Link to="/signup" className="text-blue-400 transition hover:underline">
                                     Sign Up
                                 </Link>
                             </div>
-
-                            {/* <div id="third-party-auth" className="flex justify-center gap-4 mt-5">
-                                {socialLinksData.map((item) => (
-                                    <button className="p-2 rounded-lg hover:scale-105 transition transform duration-300 shadow-lg cursor-pointer" key={item.id}>
-                                        <img className="w-6 h-6" loading="lazy" src={item.src} alt={item.alt} />
-                                    </button>
-                                ))}
-                            </div> */}
 
                             <div id="third-party-auth" className="flex justify-center gap-4 mt-5">
                                 <button
@@ -183,7 +188,7 @@ export default function Login() {
                                     />
                                 </button>
 
-                                {/* <button
+                                <button
                                     onClick={handleGithubLogin}
                                     className="p-2 rounded-lg hover:scale-105 transition transform duration-300 shadow-lg cursor-pointer"
                                 >
@@ -192,16 +197,16 @@ export default function Login() {
                                         src="https://cdn-icons-png.flaticon.com/128/733/733553.png"
                                         alt="Github"
                                     />
-                                </button> */}
+                                </button>
                             </div>
 
                             <div className="mt-4 text-center text-sm text-gray-500">
-                                By signing in, you agree to our {''}
+                                By signing in, you agree to our {""}
                                 <Link to="/terms" className="text-blue-400 transition hover:underline">
                                     Terms
                                 </Link>
 
-                                {''} and {''}
+                                {""} and {""}
 
                                 <Link to="/privacyPolicy" className="text-blue-400 transition hover:underline">
                                     Privacy Policy
