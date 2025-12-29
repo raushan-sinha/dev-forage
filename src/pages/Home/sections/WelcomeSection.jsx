@@ -8,7 +8,7 @@ export default function WelcomeSection() {
             <div className="max-w-5xl mx-auto text-center flex flex-col items-center justify-center">
                 {/* Title */}
                 <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight mb-6">
-                    Welcome to DevForage Learning
+                    Built for developers who want real-world skills, not just tutorials.
                 </h1>
 
                 {/* Subtitle */}
