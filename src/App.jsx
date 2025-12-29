@@ -2,8 +2,7 @@ import { Toaster } from "react-hot-toast";
 import { Routes, Route, useLocation } from 'react-router-dom';
 import Login from './authentication/LoginPage/Login';
 import Signup from './authentication/SignupPage/Signup';
-import Navbar from './components/Navbar/Navbar';
-import Footer from './components/Footer/Footer';
+import Footer from './components/Layout/Footer';
 import Home from './pages/Home/Home';
 import Faq from './pages/FAQs/Faq';
 import Community from './pages/Community/Community';
@@ -25,6 +24,7 @@ import BuildComponents from './pages/BuildComponents/BuildComponents';
 import ChatCommunity from './pages/ChatCommunity/ChatCommunity';
 import ScrollToTop from './components/ScrollToTop';
 import Roadmap from "./pages/Roadmap/Roadmap";
+import Navbar from "./components/Layout/Navbar";
 
 export default function App() {
     const location = useLocation();
