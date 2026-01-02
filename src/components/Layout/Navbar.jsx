@@ -1,6 +1,7 @@
 import { useState } from "react";
 import MenuIcon from '@mui/icons-material/Menu';
 import ClearIcon from '@mui/icons-material/Clear';
+import PersonIcon from '@mui/icons-material/Person';
 import { Link, useNavigate } from 'react-router-dom';
 
 //todo: Navbar Heading & Nav links -
@@ -17,13 +18,16 @@ const navbarData = {
 
 export default function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
     const navigate = useNavigate();
 
+    //todo: Navigate to home page and scroll to top
     const handleNavigate = () => {
         navigate("/");
         scrollToTop();
     };
 
+    //todo: Scroll to top   
     const scrollToTop = () => {
         window.scrollTo({
             top: 0,
@@ -56,11 +60,15 @@ export default function Navbar() {
                                 </Link>
                             </li>
                         ))}
-                        <Link to="/login">
-                            <button className="px-4 py-2 rounded-lg bg-blue-600 text-white font-medium hover:bg-blue-700 transition duration-300 cursor-pointer">
-                                Login
-                            </button>
-                        </Link>
+                        {isLoggedIn ? (
+                            <Link to="/signup">
+                                <button className="px-4 py-2 rounded-lg bg-blue-600 text-white font-medium hover:bg-blue-700 transition duration-300 cursor-pointer">
+                                    Signup
+                                </button>
+                            </Link>
+                        ) : (
+                            <PersonIcon className="cursor-pointer" />
+                        )}
                     </ul>
 
                     {/* Mobile Menu Button */}
