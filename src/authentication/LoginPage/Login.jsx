@@ -147,9 +147,9 @@ export default function Login() {
                                 </div>
 
                                 <div className="text-right">
-                                    <a href="#" className="text-blue-400 text-sm transition hover:underline">
+                                    <Link className="text-blue-400 text-sm transition hover:underline" to='/forgot-password'>
                                         Forgot your password?
-                                    </a>
+                                    </Link>
                                 </div>
 
                                 <button className="w-full p-3 mt-2 text-white bg-gradient-to-r from-blue-500 to-purple-500 rounded-lg  transition transform duration-300 shadow-lg focus:outline-none focus:ring-2 focus:ring-blue-500 cursor-pointer font-bold" type="submit">
