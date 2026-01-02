@@ -25,6 +25,7 @@ import ChatCommunity from './pages/ChatCommunity/ChatCommunity';
 import ScrollToTop from './components/ScrollToTop';
 import Roadmap from "./pages/Roadmap/Roadmap";
 import Navbar from "./components/Layout/Navbar";
+import ForgotPassword from "./authentication/ForgotPassword";
 
 export default function App() {
     const location = useLocation();
@@ -40,6 +41,7 @@ export default function App() {
                 <Route path='/' element={<Home />} />
                 <Route path='/login' element={<Login />} />
                 <Route path='/signup' element={<Signup />} />
+                <Route path="/forgot-password" element={<ForgotPassword />} />
                 <Route path='/faqs' element={<Faq />} />
                 <Route path='/community' element={<Community />} />
                 <Route path='/blog' element={<Blog />} />
