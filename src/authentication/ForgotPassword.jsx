@@ -30,12 +30,9 @@ const ForgotPassword = () => {
             <div className="w-full max-w-md bg-gray-900/70 backdrop-blur-xl border border-gray-700 rounded-2xl p-8 shadow-2xl mt-10">
 
                 {/* Heading */}
-                <h1 className="text-3xl font-bold text-white text-center mb-2">
+                <h1 className="text-3xl font-bold text-white text-center mb-5">
                     Forgot Password
                 </h1>
-                <p className="text-gray-400 text-center mb-6">
-                    Enter your email and we’ll send you a reset link.
-                </p>
 
                 {/* Form (UI only) */}
                 {!success ? (
@@ -85,10 +82,6 @@ const ForgotPassword = () => {
                         Back to login
                     </Link>
                 </div>
-
-                <p className="mt-4 text-xs text-gray-500 text-center">
-                    🔒 Secure & encrypted password recovery
-                </p>
             </div>
         </div>
     )
