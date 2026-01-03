@@ -147,7 +147,7 @@ export default function Login() {
                                 </div>
 
                                 <div className="text-right">
-                                    <Link className="text-blue-400 text-sm transition hover:underline" to='/forgot-password'>
+                                    <Link className="text-blue-400 text-sm transition" to='/forgot-password'>
                                         Forgot password?
                                     </Link>
                                 </div>
