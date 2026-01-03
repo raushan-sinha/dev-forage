@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { loginUser } from '../../services/authService';
 import { auth, githubProvider, googleProvider } from '../../utils/Firebase';
@@ -9,6 +9,12 @@ export default function Login() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const navigate = useNavigate();
+    const inputRef = useRef(null);
+
+    //todo: Auto focus on Form input field -
+    useEffect(() => {
+        inputRef.current.focus();
+    }, []);
 
     const fetchGithubEmail = async (token) => {
         const res = await fetch("https://api.github.com/user/emails", {
@@ -135,7 +141,7 @@ export default function Login() {
                                         Email
                                     </label>
 
-                                    <input id="email" name="email" className="border p-3 shadow-md dark:bg-indigo-700 dark:text-gray-300 dark:border-gray-700 border-gray-300 rounded-lg w-full focus:ring-2 focus:ring-blue-500 transition transform duration-300" type="email" placeholder="Email" required value={email} onChange={(e) => setEmail(e.target.value)} autoComplete="username" />
+                                    <input id="email" name="email" className="border p-3 shadow-md dark:bg-indigo-700 dark:text-gray-300 dark:border-gray-700 border-gray-300 rounded-lg w-full focus:ring-2 focus:ring-blue-500 transition transform duration-300" type="email" placeholder="Email" required value={email} onChange={(e) => setEmail(e.target.value)} autoComplete="username" ref={inputRef} />
                                 </div>
 
                                 <div>
