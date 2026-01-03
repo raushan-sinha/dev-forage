@@ -29,7 +29,7 @@ import ForgotPassword from "./authentication/ForgotPassword";
 
 export default function App() {
     const location = useLocation();
-    const noLayoutRoutes = ['/login', '/signup'];
+    const noLayoutRoutes = ['/login', '/signup', '/forgot-password'];
 
     const hideLayout = noLayoutRoutes.includes(location.pathname);
 
