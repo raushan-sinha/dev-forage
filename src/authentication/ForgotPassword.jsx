@@ -1,5 +1,4 @@
 import React, { useEffect, useRef, useState } from 'react'
-import { Link } from 'react-router-dom';
 
 const ForgotPassword = () => {
     const emailRef = useRef(null);
@@ -57,7 +56,7 @@ const ForgotPassword = () => {
 
                         <button
                             type="submit"
-                            className="w-full py-3 rounded-xl bg-cyan-500 text-black font-semibold hover:scale-[1.02] transition"
+                            className="w-full py-3 rounded-xl bg-cyan-500 text-black font-semibold cursor-pointer"
                         >
                             {loading ? 'Sending Link...' : 'Send Reset Link'}
                         </button>
@@ -72,16 +71,6 @@ const ForgotPassword = () => {
                         </p>
                     </div>
                 )}
-
-                {/* Footer */}
-                <div className="mt-6 text-center">
-                    <Link
-                        to="/login"
-                        className="text-sm text-cyan-400 hover:underline"
-                    >
-                        Back to login
-                    </Link>
-                </div>
             </div>
         </div>
     )
