@@ -1,8 +1,8 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import MenuIcon from '@mui/icons-material/Menu';
 import ClearIcon from '@mui/icons-material/Clear';
 import PersonIcon from '@mui/icons-material/Person';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useMatch, useNavigate } from 'react-router-dom';
 
 //todo: Navbar Heading & Nav links -
 const navbarData = {
@@ -18,7 +18,7 @@ const navbarData = {
 
 export default function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
-    const [isLoggedIn, setIsLoggedIn] = useState(false);
+    const [isSignedIn, setIsLSignedIn] = useState(false);
     const navigate = useNavigate();
 
     //todo: Navigate to home page and scroll to top
@@ -34,6 +34,12 @@ export default function Navbar() {
             behavior: "smooth",
         });
     };
+
+    //todo: After Signed up User icon show in the Navbar -
+    useEffect(() => {
+        const signedUp = localStorage.getItem('isSignedUp') === "true";
+        setIsLSignedIn(signedUp);
+    }, []);
 
     return (
         <>
@@ -53,22 +59,23 @@ export default function Navbar() {
                             <li key={link.id}>
                                 <Link
                                     to={link.href}
-                                    className="hover:underline underline-offset-8 decoration-2 hover:text-red-300 hover:drop-shadow-[0_0_8px_#fca5a5] transition-all"
+                                    className={useMatch(link.href) ? 'underline underline-offset-8 decoration-2 text-red-300 transition-all' : ''}
                                     onClick={scrollToTop}
                                 >
                                     {link.name}
                                 </Link>
                             </li>
                         ))}
-                        {isLoggedIn ? (
+                        {isSignedIn ? (
+                            <PersonIcon className="cursor-pointer" />
+                        ) : (
                             <Link to="/signup">
-                                <button className="px-4 py-2 rounded-lg bg-blue-600 text-white font-medium hover:bg-blue-700 transition duration-300 cursor-pointer">
+                                <button className="px-4 py-2 rounded-lg bg-blue-600 text-white">
                                     Signup
                                 </button>
                             </Link>
-                        ) : (
-                            <PersonIcon className="cursor-pointer" />
                         )}
+
                     </ul>
 
                     {/* Mobile Menu Button */}
