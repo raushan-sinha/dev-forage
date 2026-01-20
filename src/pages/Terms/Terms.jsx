@@ -100,10 +100,10 @@ const termsData = [
 
 export default function Terms() {
     return (
-        <div className="bg-gradient-to-br from-gray-900 via-gray-800 to-black min-h-screen p-6 md:p-12 mt-10">
+        <div className="bg-gradient-to-br from-gray-900 via-gray-800 to-black min-h-screen py-25">
             <div className="max-w-5xl mx-auto">
                 <h1 className="text-3xl md:text-4xl font-bold text-blue-800 dark:text-blue-300 mb-8 text-center">
-                    DevForage Contest Terms & Conditions
+                    DevForage Terms & Conditions
                 </h1>
 
                 <p className="text-md md:text-lg text-gray-700 dark:text-gray-300 mb-8 text-center">
