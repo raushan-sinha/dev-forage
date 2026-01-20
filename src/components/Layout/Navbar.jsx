@@ -67,10 +67,12 @@ export default function Navbar() {
                             </li>
                         ))}
                         {isSignedIn ? (
-                            <PersonIcon className="cursor-pointer" />
+                            <Link to='/userprofile'>
+                                <PersonIcon className="cursor-pointer" />
+                            </Link>
                         ) : (
                             <Link to="/signup">
-                                <button className="px-4 py-2 rounded-lg bg-blue-600 text-white">
+                                <button className="px-4 py-2 rounded-lg bg-blue-600 text-white cursor-pointer">
                                     Signup
                                 </button>
                             </Link>
