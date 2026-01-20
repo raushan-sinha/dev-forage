@@ -2,7 +2,7 @@ import React from "react";
 
 export default function HeroSection() {
     return (
-        <section className="bg-gradient-to-br from-gray-900 via-gray-800 to-black text-white py-20 px-6 md:px-20 text-center">
+        <section className="bg-gradient-to-br from-gray-900 via-gray-800 to-black text-white py-25 px-6 md:px-20 text-center">
             <h1 className="text-3xl md:text-5xl font-bold mb-6">
                 Learn Together. Grow Together.
             </h1>
