@@ -7,12 +7,12 @@ import CallToAction from './sections/CallToAction';
 
 export default function Community() {
     return (
-        <div className='mt-8'>
+        <main>
             <HeroSection />
             <WhyCommunity />
             <Features />
             <Guidelines />
             <CallToAction />
-        </div>
+        </main>
     );
 }
