@@ -97,7 +97,7 @@ export default function Feedback() {
     }
 
     return (
-        <div className="min-h-screen bg-gradient-to-br from-[#0f172a] via-[#1e293b] to-[#0f172a] py-8 px-4 mt-10 sm:px-6 lg:px-8">
+        <div className="min-h-screen bg-gradient-to-br from-[#0f172a] via-[#1e293b] to-[#0f172a] py-25 px-4 sm:px-6 lg:px-8">
             {isSubmitted ? (
                 <FeedbackSuccess />
             ) : (
