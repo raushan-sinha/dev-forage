@@ -63,7 +63,6 @@ const AppRoutes = () => {
                 <Route path='/pricing' element={<Pricing />} />
                 <Route path='/build-components' element={<BuildComponents />} />
                 <Route path='/chat-community' element={<ChatCommunity />} />
-                
                 {/* UserProfile page */}
                 <Route path="userprofile" element={<UserProfile />} />
                 <Route path="/sidebar" element={<Sidebar />} />
