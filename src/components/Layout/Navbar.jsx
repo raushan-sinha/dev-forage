@@ -8,11 +8,10 @@ import { Link, useMatch, useNavigate } from 'react-router-dom';
 const navbarData = {
     heading: 'DevForage',
     navLinks: [
-        { id: 1, name: "Home", href: "/" },
-        { id: 2, name: "DevStores", href: "/devStores" },
-        { id: 3, name: "Components", href: "/components" },
-        { id: 4, name: "Roadmap", href: "/roadmap" },
-        { id: 5, name: "Pricing", href: "/pricing" },
+        { name: "DevStores", href: "/devStores" },
+        { name: "Components", href: "/components" },
+        { name: "Roadmap", href: "/roadmap" },
+        { name: "Pricing", href: "/pricing" },
     ]
 }
 
@@ -55,8 +54,8 @@ export default function Navbar() {
 
                     {/* Desktop Links */}
                     <ul className="hidden md:flex text-white font-medium text-base lg:text-lg items-center gap-4 lg:gap-10">
-                        {navbarData.navLinks.map((link) => (
-                            <li key={link.id}>
+                        {navbarData.navLinks.map((link, id) => (
+                            <li key={id}>
                                 <Link
                                     to={link.href}
                                     className={useMatch(link.href) ? 'underline underline-offset-8 decoration-2 text-red-300 transition-all' : ''}
@@ -95,8 +94,8 @@ export default function Navbar() {
                 {isOpen && (
                     <div className="md:hidden bg-[#0d1825] text-white shadow-lg transition-all duration-300">
                         <ul className="flex flex-col items-center space-y-6 py-6 font-medium">
-                            {navbarData.navLinks.map((link) => (
-                                <li key={link.id}>
+                            {navbarData.navLinks.map((link, id) => (
+                                <li key={id}>
                                     <Link
                                         to={link.href}
                                         className="hover:text-blue-400 transition-colors hover:underline underline-offset-8 decoration-2"
