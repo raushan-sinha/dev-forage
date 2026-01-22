@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import MenuIcon from '@mui/icons-material/Menu';
 import ClearIcon from '@mui/icons-material/Clear';
 import PersonIcon from '@mui/icons-material/Person';
-import { Link, useMatch, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 
 //todo: Navbar Heading & Nav links -
 const navbarData = {
@@ -19,6 +19,7 @@ export default function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
     const [isSignedIn, setIsLSignedIn] = useState(false);
     const navigate = useNavigate();
+    const location = useLocation();
 
     //todo: Navigate to home page and scroll to top
     const handleNavigate = () => {
@@ -58,7 +59,7 @@ export default function Navbar() {
                             <li key={id}>
                                 <Link
                                     to={link.href}
-                                    className={useMatch(link.href) ? 'underline underline-offset-8 decoration-2 text-red-300 transition-all' : ''}
+                                    className={location.pathname === link.href ? 'underline underline-offset-8 decoration-2 text-red-300 transition-all' : ''}
                                     onClick={scrollToTop}
                                 >
                                     {link.name}
