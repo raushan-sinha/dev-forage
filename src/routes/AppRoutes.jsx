@@ -29,6 +29,7 @@ import UserProfile from '../pages/UserProfile/UserProfile';
 import Sidebar from '../components/Layout/Sidebar';
 import Footer from '../components/Layout/Footer';
 import ScrollToTop from '../components/ScrollToTop';
+import ScrollToDown from '../components/buttons/ScrollToDown';
 
 const AppRoutes = () => {
     const location = useLocation();
@@ -69,6 +70,8 @@ const AppRoutes = () => {
             </Routes>
 
             {!hideLayout && <Footer />}
+
+            {!hideLayout && <ScrollToDown />}
 
             <ScrollToTop />
 
