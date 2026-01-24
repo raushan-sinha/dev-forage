@@ -109,17 +109,17 @@ export default function Navbar() {
                                     </Link>
                                 </li>
                             ))}
-                            <Link to="/login">
-                                <button
-                                    className="px-5 py-2 rounded-lg bg-blue-600 text-white font-medium hover:bg-blue-700 transition duration-300"
-                                    onClick={() => {
-                                        setIsOpen(false);
-                                        scrollToTop();
-                                    }}
-                                >
-                                    Login
-                                </button>
-                            </Link>
+                            {isSignedIn ? (
+                                <Link to='/userprofile'>
+                                    <PersonIcon className="cursor-pointer" />
+                                </Link>
+                            ) : (
+                                <Link to="/signup">
+                                    <button className="px-4 py-2 rounded-lg bg-blue-600 text-white cursor-pointer">
+                                        Signup
+                                    </button>
+                                </Link>
+                            )}
                         </ul>
                     </div>
                 )}
