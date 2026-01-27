@@ -65,7 +65,7 @@ export default function OfferSection() {
     };
 
     return (
-        <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-[#020617] via-[#0F172A] to-[#083344]">
+        <section className="py-20 px-4 sm:px-10 lg:px-8 bg-linear-to-br from-[#020617] via-[#0F172A] to-[#083344]">
             <div className="max-w-7xl mx-auto">
                 {/* Title & Description */}
                 <div className="text-center mb-16">
