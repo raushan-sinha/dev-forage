@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 import { OfferSection, RoadmapSection, WelcomeSection, DsaSection, WhySection, FutureSection } from './sections';
 import { getLoggedInUser } from '../../services/authService';
-// import ScrollToDown from '../../components/buttons/ScrollToDown';
 
 export default function Home() {
     useEffect(() => {
