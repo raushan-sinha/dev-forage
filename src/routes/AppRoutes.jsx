@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Toaster } from "react-hot-toast";
 import { Routes, Route, useLocation } from 'react-router-dom';
 import Navbar from '../components/Layout/Navbar';
@@ -29,11 +29,31 @@ import UserProfile from '../pages/UserProfile/UserProfile';
 import Sidebar from '../components/Layout/Sidebar';
 import Footer from '../components/Layout/Footer';
 import ScrollToTop from '../components/ScrollToTop';
+import ScrollToDown from '../components/buttons/ScrollToDown';
 
 const AppRoutes = () => {
     const location = useLocation();
     const noLayoutRoutes = ['/login', '/signup', '/forgot-password', '/userprofile'];
     const hideLayout = noLayoutRoutes.includes(location.pathname);
+    const [scrollShow, setScrollShow] = useState(false);
+
+    //TODO: Logic to show SCroll button after limited height -
+    useEffect(() => {
+        const handleScroll = () => {
+            if (window.scrollY > 700) {
+                setScrollShow(true);
+            } else {
+                setScrollShow(false);
+            }
+        };
+
+        window.addEventListener('scroll', handleScroll);
+
+        return () => {
+            window.addEventListener('scroll', handleScroll);
+        }
+    }, []);
+
 
     return (
         <>
@@ -69,6 +89,8 @@ const AppRoutes = () => {
             </Routes>
 
             {!hideLayout && <Footer />}
+
+            {scrollShow && <ScrollToDown />}
 
             <ScrollToTop />
 
