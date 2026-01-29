@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 export default function WelcomeSection() {
     return (
-        <section className="relative bg-gradient-to-br from-gray-900 via-gray-800 to-black text-white py-25 px-6 sm:py-35 md:px-12 lg:px-24 min-h-screen">
+        <section className="relative bg-linear-to-br from-gray-900 via-gray-800 to-black text-white py-25 px-6 sm:py-35 md:px-12 lg:px-24 min-h-screen">
             <div className="max-w-5xl mx-auto text-center flex flex-col items-center justify-center">
                 {/* Title */}
                 <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight mb-6">
@@ -54,7 +54,7 @@ export default function WelcomeSection() {
             </div>
 
             {/* Background overlay */}
-            <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-indigo-700/20 via-blue-800/10 to-transparent pointer-events-none"></div>
+            <div className="absolute top-0 left-0 w-full h-full bg-linear-to-br from-indigo-700/20 via-blue-800/10 to-transparent pointer-events-none"></div>
         </section>
     );
 }

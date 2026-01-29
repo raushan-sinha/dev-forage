@@ -9,7 +9,7 @@ export default function RoadmapSection() {
     };
 
     return (
-        <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-purple-600 to-blue-600">
+        <section className="py-20 px-4 sm:px-6 lg:px-8 bg-linear-to-r from-purple-600 to-blue-600">
             <div className="max-w-7xl mx-auto text-center text-white">
                 <h2 className="text-3xl md:text-5xl font-bold mb-8">
                     {roadmaps.title}
