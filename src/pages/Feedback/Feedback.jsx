@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Send as SendIcon, Email as EmailIcon, AccountCircle as AccountCircleIcon, } from '@mui/icons-material';
 import FeedbackSuccess from './FeedbackSuccess';
 import Alert from '@mui/material/Alert';
@@ -22,6 +22,7 @@ export default function Feedback() {
     const [wordCount, setWordCount] = useState(0);
     const [countAlert, setCountAlert] = useState(false);
     const access_Key = import.meta.env.VITE_FORM_ACCESS_KEY;
+    const inputRef = useRef(null);
 
     const WORD_LIMIT = 50;
     const handleChange = (e) => {
@@ -57,6 +58,7 @@ export default function Feedback() {
         }));
     }
 
+    //TODO: Form submission logic -
     const handleSubmit = async (e) => {
         e.preventDefault();
         if (formData.name && formData.email && formData.message) {
@@ -96,6 +98,11 @@ export default function Feedback() {
         }
     }
 
+    //TODO: Input focus on reload -
+    useEffect(() => {
+        inputRef.current.focus();
+    }, []);
+
     return (
         <div className="min-h-screen bg-gradient-to-br from-[#0f172a] via-[#1e293b] to-[#0f172a] py-25 px-4 sm:px-6 lg:px-8">
             {isSubmitted ? (
@@ -130,6 +137,7 @@ export default function Feedback() {
                                         placeholder="Enter your name"
                                         value={formData.name}
                                         onChange={handleChange}
+                                        ref={inputRef}
                                     />
                                 </div>
                             </div>
