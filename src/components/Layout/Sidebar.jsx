@@ -1,12 +1,45 @@
 import React from 'react'
 import SidebarLink from '../ui/SidebarLink';
+import { Link } from 'react-router-dom';
 
 //TODO: Links for Sidebar -
 const sidebarLinks = [
-    { para: 'Core', links: ['Dashboard', 'Learning Paths', 'My Courses'] },
-    { para: 'Build', links: ['Projects', 'Code Labs', 'Playground'] },
-    { para: 'Validate', links: ['Assessments', 'Certifications', 'Progress Tracker'] },
-    { para: 'Career', links: ['Career Hub', 'Community', 'Mentorship'] },
+    {
+        para: 'Core',
+        links: [
+            // 'Dashboard', 'Learning Paths', 'My Courses'
+            { name: 'Dashboard', url: '/dashboard' },
+            { name: 'Learning Paths', url: '/learningpath' },
+            { name: 'My Courses', url: '/mycourse' },
+        ]
+    },
+    {
+        para: 'Build',
+        links: [
+            // 'Projects', 'Code Labs', 'Playground'
+            { name: 'Projects', url: '/projects' },
+            { name: 'Code Labs', url: '/codelabs' },
+            { name: 'Playground', url: '/playground' },
+        ]
+    },
+    {
+        para: 'Validate',
+        links: [
+            // 'Assessments', 'Certifications', 'Progress Tracker'
+            { name: 'Assessments', url: '/assessments' },
+            { name: 'Certifications', url: '/certifications' },
+            { name: 'Progress Tracker', url: '/progresstracker' },
+        ]
+    },
+    {
+        para: 'Career',
+        links: [
+            // 'Career Hub', 'Community', 'Mentorship'
+            { name: 'Career Hub', url: '/careerhub' },
+            { name: 'Community', url: '/community' },
+            { name: 'Progress Tracker', url: '/progresstracker' },
+        ]
+    },
 ];
 
 //TODO: Footer links -
@@ -30,8 +63,10 @@ const Sidebar = () => {
                         <p className="text-xs uppercase tracking-widest text-zinc-500 mb-3">
                             {item.para}
                         </p>
-                        {item.links.map((link, id) => (
-                            <SidebarLink key={id} label={link} />
+                        {item.links.map((li, id) => (
+                            <Link to={li.url}>
+                                <SidebarLink key={id} label={li.name} />
+                            </Link>
                         ))}
                     </div>
                 ))}
