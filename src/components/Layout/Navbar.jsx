@@ -67,7 +67,7 @@ export default function Navbar() {
                             </li>
                         ))}
                         {isSignedIn ? (
-                            <Link to='/userprofile'>
+                            <Link to='/dashboard'>
                                 <PersonIcon className="cursor-pointer" />
                             </Link>
                         ) : (
