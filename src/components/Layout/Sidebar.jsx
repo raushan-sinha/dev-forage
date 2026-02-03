@@ -10,8 +10,7 @@ const sidebarLinks = [
 ];
 
 //TODO: Footer links -
-const footerLinks = ['Profile', 'Settings', 'Billing', 'Logout'];
-
+const footerLinks = ['Settings', 'Billing', 'Logout'];
 
 const Sidebar = () => {
     return (
@@ -36,46 +35,6 @@ const Sidebar = () => {
                         ))}
                     </div>
                 ))}
-
-                {/* Core */}
-                {/* <div>
-                    <p className="text-xs uppercase tracking-widest text-zinc-500 mb-3">
-                        Core
-                    </p>
-                    <SidebarLink label="Dashboard" />
-                    <SidebarLink label="Learning Paths" />
-                    <SidebarLink label="My Courses" />
-                </div> */}
-
-                {/* Build */}
-                {/* <div>
-                    <p className="text-xs uppercase tracking-widest text-zinc-500 mb-3">
-                        Build
-                    </p>
-                    <SidebarLink label="Projects" />
-                    <SidebarLink label="Code Labs" />
-                    <SidebarLink label="Playground" />
-                </div> */}
-
-                {/* Validate */}
-                {/* <div>
-                    <p className="text-xs uppercase tracking-widest text-zinc-500 mb-3">
-                        Validate
-                    </p>
-                    <SidebarLink label="Assessments" />
-                    <SidebarLink label="Certifications" />
-                    <SidebarLink label="Progress Tracker" />
-                </div> */}
-
-                {/* Career */}
-                {/* <div>
-                    <p className="text-xs uppercase tracking-widest text-zinc-500 mb-3">
-                        Career
-                    </p>
-                    <SidebarLink label="Career Hub" />
-                    <SidebarLink label="Community" />
-                    <SidebarLink label="Mentorship" />
-                </div> */}
             </nav>
 
             {/* Footer */}
@@ -87,21 +46,5 @@ const Sidebar = () => {
         </aside>
     );
 };
-
-// const SidebarLink = ({ label, danger }) => {
-//     return (
-//         <div
-//             className={`group flex items-center gap-3 px-4 py-2.5 rounded-lg cursor-pointer transition
-//           ${danger
-//                     ? "text-red-400 hover:bg-red-500/10"
-//                     : "text-zinc-300 hover:bg-zinc-800 hover:text-white"
-//                 }`}
-//         >
-//             {/* Icon placeholder */}
-//             <span className="h-2.5 w-2.5 rounded-full bg-zinc-600 group-hover:bg-indigo-500 transition" />
-//             <span className="text-sm font-medium">{label}</span>
-//         </div>
-//     );
-// };
 
 export default Sidebar;
