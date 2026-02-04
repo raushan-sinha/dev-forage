@@ -38,10 +38,11 @@ import Assessments from '../pages/UserProfile/Assessments';
 import Certifications from '../pages/UserProfile/Certifications';
 import ProgressTracker from '../pages/UserProfile/ProgressTracker';
 import CareerHub from '../pages/UserProfile/CareerHub';
+import Mentorship from '../pages/UserProfile/Mentorship';
 
 const AppRoutes = () => {
     const location = useLocation();
-    const noLayoutRoutes = ['/login', '/signup', '/forgot-password', '/dashboard', '/learningpath', '/mycourse', '/projects', '/codelabs', '/playground', '/assessments', '/certifications', '/careerhub', '/progresstracker'];
+    const noLayoutRoutes = ['/login', '/signup', '/forgot-password', '/dashboard', '/learningpath', '/mycourse', '/projects', '/codelabs', '/playground', '/assessments', '/certifications', '/careerhub', '/progresstracker', '/mentorship'];
     const hideLayout = noLayoutRoutes.includes(location.pathname);
     const [scrollShow, setScrollShow] = useState(false);
 
@@ -102,6 +103,7 @@ const AppRoutes = () => {
                 <Route path='/certifications' element={<Certifications />} />
                 <Route path='/careerhub' element={<CareerHub />} />
                 <Route path='/progresstracker' element={<ProgressTracker />} />
+                <Route path='/mentorship' element={<Mentorship />} />
             </Routes>
 
             {!hideLayout && <Footer />}
