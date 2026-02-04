@@ -28,7 +28,7 @@ import ChatCommunity from '../pages/ChatCommunity/ChatCommunity';
 import UserProfile from '../pages/UserProfile/Dashboard';
 import Footer from '../components/Layout/Footer';
 import ScrollToTop from '../components/ScrollToTop';
-import ScrollToDown from '../components/buttons/ScrollToDown';
+import ScrollShow from '../components/buttons/ScrollShow';
 import LearningPath from '../pages/UserProfile/LearningPath';
 import MyCourse from '../pages/UserProfile/MyCourse';
 import Projects from '../pages/UserProfile/Projects';
@@ -108,7 +108,7 @@ const AppRoutes = () => {
 
             {!hideLayout && <Footer />}
 
-            {scrollShow && <ScrollToDown />}
+            {scrollShow && <ScrollShow />}
 
             <ScrollToTop />
 
