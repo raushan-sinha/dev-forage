@@ -1,5 +1,5 @@
 import React from 'react'
-import SidebarLink from '../ui/SidebarLink';
+// import SidebarLink from '../ui/SidebarLink';
 import { Link } from 'react-router-dom';
 
 //TODO: Links for Sidebar -
@@ -37,7 +37,7 @@ const sidebarLinks = [
             // 'Career Hub', 'Community', 'Mentorship'
             { name: 'Career Hub', url: '/careerhub' },
             { name: 'Community', url: '/community' },
-            { name: 'Progress Tracker', url: '/progresstracker' },
+            { name: 'Mentorship', url: '/mentorship' },
         ]
     },
 ];
@@ -64,21 +64,26 @@ const Sidebar = () => {
                             {item.para}
                         </p>
                         {item.links.map((li, id) => (
-                            <Link to={li.url}>
-                                <SidebarLink key={id} label={li.name} />
+                            <Link to={li.url}
+                            >
+                                {/* <SidebarLink key={id} label={li.name} /> */}
+                                <div key={id} className={`${location.pathname === li.url ? ' bg-red-500' : ''} cursor-pointer group flex items-center gap-3 px-4 py-2.5 transition rounded-lg`}>
+                                <span className='rounded-full w-2.5 h-2.5 bg-zinc-600 group-hover:bg-indigo-500 transition'></span>
+                                <span className='text-sm font-medium'>{li.name}</span>
+                            </div>
                             </Link>
-                        ))}
-                    </div>
                 ))}
-            </nav>
+            </div>
+                ))}
+        </nav>
 
-            {/* Footer */}
-            {footerLinks.map((link, idx) => (
+            {/* Footer */ }
+    {/* {footerLinks.map((link, idx) => (
                 <div className="p-2 border-t border-zinc-800" key={idx}>
                     {link === 'Logout' ? <SidebarLink label={link} danger /> : <SidebarLink label={link} />}
                 </div>
-            ))}
-        </aside>
+            ))} */}
+        </aside >
     );
 };
 
