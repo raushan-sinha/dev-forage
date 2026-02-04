@@ -1,6 +1,6 @@
 import React from 'react'
 // import SidebarLink from '../ui/SidebarLink';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 //TODO: Links for Sidebar -
 const sidebarLinks = [
@@ -45,12 +45,20 @@ const sidebarLinks = [
 //TODO: Footer links -
 const footerLinks = ['Settings', 'Billing', 'Logout'];
 
+
 const Sidebar = () => {
+    const navigate = useNavigate();
+
+    //todo: Navigate to home page and scroll to top
+    const handleNavigate = () => {
+        navigate('/');
+    }
+
     return (
         <aside className="fixed inset-y-0 left-0 z-40 w-72 bg-zinc-950 text-zinc-100 border-r border-zinc-800 hidden lg:flex flex-col">
             {/* Logo */}
             <div className="px-6 py-5 border-b border-zinc-800">
-                <h1 className="text-xl font-semibold tracking-tight logo-text">DevForage</h1>
+                <h1 className="text-xl font-semibold tracking-tight logo-text cursor-pointer" onClick={handleNavigate}>DevForage</h1>
                 <p className="text-base text-zinc-400 mt-1">
                     Learn. Build. Ship.
                 </p>
@@ -67,18 +75,18 @@ const Sidebar = () => {
                             <Link to={li.url}
                             >
                                 {/* <SidebarLink key={id} label={li.name} /> */}
-                                <div key={id} className={`${location.pathname === li.url ? ' bg-red-500' : ''} cursor-pointer group flex items-center gap-3 px-4 py-2.5 transition rounded-lg`}>
-                                <span className='rounded-full w-2.5 h-2.5 bg-zinc-600 group-hover:bg-indigo-500 transition'></span>
-                                <span className='text-sm font-medium'>{li.name}</span>
-                            </div>
+                                <div key={id} className={`${location.pathname === li.url ? 'underline underline-offset-8 decoration-2 text-cyan-400' : ''} cursor-pointer group flex items-center gap-3 px-4 py-2.5 transition rounded-lg`}>
+                                    <span className={`bg-zi rounded-full w-2.5 h-2.5 transition ${location.pathname === li.url ? 'bg-cyan-400' : 'bg-zinc-600'}`}></span>
+                                    <span className='text-sm font-medium'>{li.name}</span>
+                                </div>
                             </Link>
+                        ))}
+                    </div>
                 ))}
-            </div>
-                ))}
-        </nav>
+            </nav>
 
-            {/* Footer */ }
-    {/* {footerLinks.map((link, idx) => (
+            {/* Footer */}
+            {/* {footerLinks.map((link, idx) => (
                 <div className="p-2 border-t border-zinc-800" key={idx}>
                     {link === 'Logout' ? <SidebarLink label={link} danger /> : <SidebarLink label={link} />}
                 </div>
