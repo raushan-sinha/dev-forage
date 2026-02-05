@@ -1,39 +1,51 @@
 import React from 'react'
-// import SidebarLink from '../ui/SidebarLink';
 import { Link, useNavigate } from 'react-router-dom';
+import DashboardIcon from '@mui/icons-material/Dashboard';
+import RouteIcon from '@mui/icons-material/Route';
+import SchoolIcon from '@mui/icons-material/School';
+import WorkOutlineIcon from '@mui/icons-material/WorkOutline';
+import CodeIcon from '@mui/icons-material/Code';
+import SportsEsportsIcon from '@mui/icons-material/SportsEsports';
+import QuizIcon from '@mui/icons-material/Quiz';
+import VerifiedIcon from '@mui/icons-material/Verified';
+import InsightsIcon from '@mui/icons-material/Insights';
+import BusinessCenterIcon from '@mui/icons-material/BusinessCenter';
+import GroupsIcon from '@mui/icons-material/Groups';
+import PsychologyIcon from '@mui/icons-material/Psychology';
+
 
 //TODO: Links for Sidebar -
 const sidebarLinks = [
     {
         para: 'Core',
         links: [
-            { name: 'Dashboard', url: '/dashboard' },
-            { name: 'Learning Paths', url: '/learningpath' },
-            { name: 'My Courses', url: '/mycourse' },
+            { name: 'Dashboard', url: '/dashboard', icon: <DashboardIcon /> },
+            { name: 'Learning Paths', url: '/learningpath', icon: <RouteIcon /> },
+            { name: 'My Courses', url: '/mycourse', icon: <SchoolIcon /> },
         ]
     },
     {
         para: 'Build',
         links: [
-            { name: 'Projects', url: '/projects' },
-            { name: 'Code Labs', url: '/codelabs' },
-            { name: 'Playground', url: '/playground' },
+            { name: 'Projects', url: '/projects', icon: <WorkOutlineIcon /> },
+            { name: 'Code Labs', url: '/codelabs', icon: <CodeIcon /> },
+            { name: 'Playground', url: '/playground', icon: <SportsEsportsIcon /> },
         ]
     },
     {
         para: 'Validate',
         links: [
-            { name: 'Assessments', url: '/assessments' },
-            { name: 'Certifications', url: '/certifications' },
-            { name: 'Progress Tracker', url: '/progresstracker' },
+            { name: 'Assessments', url: '/assessments', icon: <QuizIcon /> },
+            { name: 'Certifications', url: '/certifications', icon: <VerifiedIcon /> },
+            { name: 'Progress Tracker', url: '/progresstracker', icon: <InsightsIcon /> },
         ]
     },
     {
         para: 'Career',
         links: [
-            { name: 'Career Hub', url: '/careerhub' },
-            { name: 'Community', url: '/community' },
-            { name: 'Mentorship', url: '/mentorship' },
+            { name: 'Career Hub', url: '/careerhub', icon: <BusinessCenterIcon /> },
+            { name: 'Community', url: '/community', icon: <GroupsIcon /> },
+            { name: 'Mentorship', url: '/mentorship', icon: <PsychologyIcon /> },
         ]
     },
 ];
@@ -70,7 +82,7 @@ const Sidebar = () => {
                         {item.links.map((li, id) => (
                             <Link to={li.url}>
                                 <div key={id} className={`${location.pathname === li.url ? 'underline underline-offset-8 decoration-2 text-cyan-400' : ''} cursor-pointer group flex items-center gap-3 px-4 py-2.5 transition rounded-lg`}>
-                                    <span className={`bg-zi rounded-full w-2.5 h-2.5 transition ${location.pathname === li.url ? 'bg-cyan-400' : 'bg-zinc-600'}`}></span>
+                                    <span className={`transition ${location.pathname === li.url ? 'text-cyan-400' : 'text-zinc-600'}`}>{li.icon}</span>
                                     <span className='text-sm font-medium'>{li.name}</span>
                                 </div>
                             </Link>
