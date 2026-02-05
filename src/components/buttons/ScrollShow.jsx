@@ -1,4 +1,4 @@
-import { ArrowUpward } from '@mui/icons-material'
+import ExpandLessIcon from '@mui/icons-material/ExpandLess';
 import { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 
@@ -24,8 +24,8 @@ const ScrollShow = () => {
     return (
         <>
             <div>
-                <button className='bg-red-400 fixed bottom-3 right-5 p-2 rounded-full cursor-pointer' onClick={scrollTop}>
-                    <ArrowUpward fontSize='large' />
+                <button className='bg-black text-white fixed bottom-3 right-5 p-1 rounded-full cursor-pointer' onClick={scrollTop}>
+                    <ExpandLessIcon fontSize='large' />
                 </button>
             </div>
         </>
