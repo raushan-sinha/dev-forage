@@ -7,7 +7,6 @@ const sidebarLinks = [
     {
         para: 'Core',
         links: [
-            // 'Dashboard', 'Learning Paths', 'My Courses'
             { name: 'Dashboard', url: '/dashboard' },
             { name: 'Learning Paths', url: '/learningpath' },
             { name: 'My Courses', url: '/mycourse' },
@@ -16,7 +15,6 @@ const sidebarLinks = [
     {
         para: 'Build',
         links: [
-            // 'Projects', 'Code Labs', 'Playground'
             { name: 'Projects', url: '/projects' },
             { name: 'Code Labs', url: '/codelabs' },
             { name: 'Playground', url: '/playground' },
@@ -25,7 +23,6 @@ const sidebarLinks = [
     {
         para: 'Validate',
         links: [
-            // 'Assessments', 'Certifications', 'Progress Tracker'
             { name: 'Assessments', url: '/assessments' },
             { name: 'Certifications', url: '/certifications' },
             { name: 'Progress Tracker', url: '/progresstracker' },
@@ -34,7 +31,6 @@ const sidebarLinks = [
     {
         para: 'Career',
         links: [
-            // 'Career Hub', 'Community', 'Mentorship'
             { name: 'Career Hub', url: '/careerhub' },
             { name: 'Community', url: '/community' },
             { name: 'Mentorship', url: '/mentorship' },
@@ -72,9 +68,7 @@ const Sidebar = () => {
                             {item.para}
                         </p>
                         {item.links.map((li, id) => (
-                            <Link to={li.url}
-                            >
-                                {/* <SidebarLink key={id} label={li.name} /> */}
+                            <Link to={li.url}>
                                 <div key={id} className={`${location.pathname === li.url ? 'underline underline-offset-8 decoration-2 text-cyan-400' : ''} cursor-pointer group flex items-center gap-3 px-4 py-2.5 transition rounded-lg`}>
                                     <span className={`bg-zi rounded-full w-2.5 h-2.5 transition ${location.pathname === li.url ? 'bg-cyan-400' : 'bg-zinc-600'}`}></span>
                                     <span className='text-sm font-medium'>{li.name}</span>
@@ -84,13 +78,6 @@ const Sidebar = () => {
                     </div>
                 ))}
             </nav>
-
-            {/* Footer */}
-            {/* {footerLinks.map((link, idx) => (
-                <div className="p-2 border-t border-zinc-800" key={idx}>
-                    {link === 'Logout' ? <SidebarLink label={link} danger /> : <SidebarLink label={link} />}
-                </div>
-            ))} */}
         </aside >
     );
 };
