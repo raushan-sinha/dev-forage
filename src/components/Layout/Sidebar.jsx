@@ -73,7 +73,7 @@ const Sidebar = () => {
             </div>
 
             {/* Navigation */}
-            <nav className="flex-1 overflow-y-auto px-4 py-6 space-y-6">
+            <nav className="custom-scrollbar flex-1 overflow-y-auto px-4 py-6 space-y-6">
                 {sidebarLinks.map((item, idx) => (
                     <div key={idx}>
                         <p className="text-xs uppercase tracking-widest text-zinc-500 mb-3">
