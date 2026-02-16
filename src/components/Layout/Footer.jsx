@@ -23,7 +23,6 @@ const footerData = {
                 { name: "DevStores", href: "/devStores" },
                 { name: "Components", href: "/components" },
                 { name: "Roadmap", href: "/roadmap" },
-                { name: "Pricing", href: "/pricing" },
             ],
         },
         {
