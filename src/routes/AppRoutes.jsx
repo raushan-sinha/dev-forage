@@ -29,20 +29,16 @@ import UserProfile from '../pages/UserProfile/Dashboard';
 import Footer from '../components/Layout/Footer';
 import ScrollToTop from '../components/ScrollToTop';
 import ScrollShow from '../components/buttons/ScrollShow';
-import LearningPath from '../pages/UserProfile/LearningPath';
 import MyCourse from '../pages/UserProfile/MyCourse';
 import Projects from '../pages/UserProfile/Projects';
-import CodeLabs from '../pages/UserProfile/CodeLabs';
-import Playground from '../pages/UserProfile/Playground';
-import Assessments from '../pages/UserProfile/Assessments';
 import Certifications from '../pages/UserProfile/Certifications';
 import ProgressTracker from '../pages/UserProfile/ProgressTracker';
-import CareerHub from '../pages/UserProfile/CareerHub';
 import Mentorship from '../pages/UserProfile/Mentorship';
+import Settings from '../pages/UserProfile/Settings';
 
 const AppRoutes = () => {
     const location = useLocation();
-    const noLayoutRoutes = ['/login', '/signup', '/forgot-password', '/dashboard', '/learningpath', '/mycourse', '/projects', '/codelabs', '/playground', '/assessments', '/certifications', '/careerhub', '/progresstracker', '/mentorship'];
+    const noLayoutRoutes = ['/login', '/signup', '/forgot-password', '/dashboard', '/learningpath', '/mycourse', '/projects', '/certifications', '/progresstracker', '/mentorship', '/settings'];
     const hideLayout = noLayoutRoutes.includes(location.pathname);
     const [scrollShow, setScrollShow] = useState(false);
 
@@ -94,16 +90,12 @@ const AppRoutes = () => {
                 <Route path='/chat-community' element={<ChatCommunity />} />
                 {/* UserProfile page */}
                 <Route path="/dashboard" element={<UserProfile />} />
-                <Route path='/learningpath' element={<LearningPath />} />
                 <Route path='/mycourse' element={<MyCourse />} />
                 <Route path='/projects' element={<Projects />} />
-                <Route path='/codelabs' element={<CodeLabs />} />
-                <Route path='/playground' element={<Playground />} />
-                <Route path='/assessments' element={<Assessments />} />
                 <Route path='/certifications' element={<Certifications />} />
-                <Route path='/careerhub' element={<CareerHub />} />
                 <Route path='/progresstracker' element={<ProgressTracker />} />
                 <Route path='/mentorship' element={<Mentorship />} />
+                <Route path='/settings' element={<Settings />} />
             </Routes>
 
             {!hideLayout && <Footer />}
