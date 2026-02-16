@@ -68,7 +68,7 @@ export default function Navbar() {
                         ))}
                         {isSignedIn ? (
                             <Link to='/dashboard'>
-                                <PersonIcon className="cursor-pointer" />
+                                <PersonIcon className="cursor-pointer text-yellow-400" fontSize="medium" />
                             </Link>
                         ) : (
                             <Link to="/signup">
