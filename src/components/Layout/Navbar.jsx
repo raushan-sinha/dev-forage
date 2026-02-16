@@ -11,7 +11,7 @@ const navbarData = {
         { name: "DevStores", href: "/devStores" },
         { name: "Components", href: "/components" },
         { name: "Roadmap", href: "/roadmap" },
-        { name: "Pricing", href: "/pricing" },
+        { name: "Docs", href: "/docs" },
     ]
 }
 
