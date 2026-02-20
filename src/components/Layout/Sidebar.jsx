@@ -17,7 +17,6 @@ const sidebarLinks = [
     { name: 'Projects', url: '/projects', icon: <WorkOutlineIcon /> },
     { name: 'Certifications', url: '/certifications', icon: <VerifiedIcon /> },
     { name: 'Progress Tracker', url: '/progresstracker', icon: <InsightsIcon /> },
-    { name: 'Community', url: '/community', icon: <GroupsIcon /> },
     { name: 'Mentorship', url: '/mentorship', icon: <PsychologyIcon /> },
     { name: 'Settings', url: '/settings', icon: <SettingsIcon /> },
 ];
