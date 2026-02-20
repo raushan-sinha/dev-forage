@@ -35,12 +35,20 @@ import Certifications from '../pages/UserProfile/Certifications';
 import ProgressTracker from '../pages/UserProfile/ProgressTracker';
 import Mentorship from '../pages/UserProfile/Mentorship';
 import Settings from '../pages/UserProfile/Settings';
+import Sidebar from '../components/Layout/Sidebar';
 
 const AppRoutes = () => {
     const location = useLocation();
+
+    //TODO: Navbar hide for specific pages -
     const noLayoutRoutes = ['/login', '/signup', '/forgot-password', '/dashboard', '/learningpath', '/mycourse', '/projects', '/certifications', '/progresstracker', '/mentorship', '/settings'];
     const hideLayout = noLayoutRoutes.includes(location.pathname);
+
     const [scrollShow, setScrollShow] = useState(false);
+
+    //TODO: Sidebar show for some pages -
+    const showSidebar = ['/dashboard', '/mycourse', '/projects', '/certifications', '/progresstracker', '/mentorship', '/settings'];
+    const showSidebarLayout = showSidebar.includes(location.pathname);
 
     //TODO: Logic to show SCroll button after limited height -
     useEffect(() => {
@@ -63,6 +71,8 @@ const AppRoutes = () => {
     return (
         <>
             {!hideLayout && <Navbar />}
+
+            {showSidebarLayout && <Sidebar />}
 
             <Routes>
                 <Route path='/' element={<Home />} />
